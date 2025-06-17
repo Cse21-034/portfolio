@@ -87,7 +87,7 @@ const projects: Project[] = [
     category: "security",
     technologies: ["html\css", "php", "Mysql"],
     githubUrl: "https://github.com/Cse21-034",
-    liveUrl: "https://lmosimanyana.co.bw/index.php"
+    liveUrl: "https://wifi2.free.nf/?i=1"
   },
    {
     id: 8,
