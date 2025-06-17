@@ -27,7 +27,7 @@ const projects: Project[] = [
     category: "web",
     technologies: ["React", "Node.js", "Postgrel"],
     githubUrl: "https://github.com/Cse21-034",
-    liveUrl: "https://sho-audio-store-frontend.vercel.app/shop"
+    liveUrl: "https://sho-audio-store-frontend.vercel.app"
   },
   {
     id: 2,
