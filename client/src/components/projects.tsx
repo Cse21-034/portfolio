@@ -23,11 +23,11 @@ const projects: Project[] = [
     id: 1,
     title: "E-Commerce Platform",
     description: "Full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    image: "https://iili.io/Fn3xRN2.png",
     category: "web",
-    technologies: ["React", "Node.js", "MongoDB"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com"
+    technologies: ["React", "Node.js", "Postgrel"],
+    githubUrl: "https://github.com/Cse21-034",
+    liveUrl: "https://sho-audio-store-frontend.vercel.app/shop"
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     category: "mobile",
     technologies: ["React Native", "Firebase", "SQLite"],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Cse21-034",
     downloadUrl: "https://play.google.com"
   },
   {
@@ -46,7 +46,7 @@ const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     category: "security",
     technologies: ["Python", "Flask", "Wireshark"],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Cse21-034",
     docsUrl: "https://docs.example.com"
   },
   {
@@ -55,19 +55,19 @@ const projects: Project[] = [
     description: "Responsive portfolio site with dark mode toggle, smooth animations, and contact form.",
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     category: "web",
-    technologies: ["HTML/CSS", "JavaScript", "Tailwind"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com"
+    technologies: ["React+Tailwind", "Node.js+Epress", "Postgrel"],
+    githubUrl: "https://github.com/Cse21-034",
+    liveUrl: "https://portfolio-git-main-leatiles-projects.vercel.app/"
   },
   {
     id: 5,
-    title: "Smart Home IoT System",
-    description: "Arduino-based home automation system with mobile app control and sensor monitoring.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    category: "mobile",
-    technologies: ["Arduino", "C++", "Android"],
-    githubUrl: "https://github.com",
-    demoUrl: "https://youtube.com"
+    title: "AI-Solution Website",
+    description: "AI-Solution leverages artificial intelligence to help businesses create intuitive, efficient, and empowering digital environments for their employees.",
+    image: "https://iili.io/Fn2YFku.png",
+    category: "web",
+    technologies: ["html+css", "php", "Mysql"],
+    githubUrl: "https://github.com/Cse21-034",
+    liveUrl: "https://shoaudio.rf.gd/?i=1"
   },
   {
     id: 6,
@@ -76,8 +76,28 @@ const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     category: "security",
     technologies: ["Python", "Nmap", "Django"],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Cse21-034",
     docsUrl: "https://docs.example.com"
+  },
+  {
+    id: 7,
+    title: "Authentication Token System",
+    description: "secure authentication using encrypted JWT tokens that can't be forged or modified.",
+    image: "https://iili.io/FndgCPV.png",
+    category: "security",
+    technologies: ["html\css", "php", "Mysql"],
+    githubUrl: "https://github.com/Cse21-034",
+    liveUrl: "https://lmosimanyana.co.bw/index.php"
+  },
+   {
+    id: 8,
+    title: "Buy & Sell Digital Assets website",
+    description: "Fountstream is the safest, fastest, and easiest way to trade synthetic assets, commodities, and currencies. Explore the world of crypto, DeFi, NFTs, and more—all in one place.",
+    image: "https://iili.io/Fn2sx24.png",
+    category: "web",
+    technologies: ["html\css", "php", "Mysql"],
+    githubUrl: "https://github.com/Cse21-034",
+    liveUrl: "https://fountstream.com/"
   }
 ];
 
