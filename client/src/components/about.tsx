@@ -15,7 +15,7 @@ export function About() {
           {/* Professional Image */}
           <div className="order-2 lg:order-1">
             <img 
-              src="https://freeimage.host/i/FndI3IS8&auto=format&fit=crop&w=800&h=600" 
+              src="https://iili.io/FndI3IS.png" 
               alt="Professional developer workspace" 
               className="rounded-xl shadow-2xl w-full h-auto"
             />
