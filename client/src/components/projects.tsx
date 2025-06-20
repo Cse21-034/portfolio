@@ -22,7 +22,7 @@ const projects: Project[] = [
   {
     id: 1,
     title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.",
+    description: "Full-stack shop with auth, cart, checkout, and admin dashboard.",
     image: "https://iili.io/Fn3xRN2.png",
     category: "web",
     technologies: ["React", "Node.js", "Postgrel"],
@@ -62,7 +62,7 @@ const projects: Project[] = [
   {
     id: 5,
     title: "AI-Solution Website",
-    description: "AI-Solution leverages artificial intelligence to help businesses create intuitive, efficient, and empowering digital environments for their employees.",
+    description: "Business site with AI tools, services, and testimonial section.",
     image: "https://iili.io/Fn2YFku.png",
     category: "web",
     technologies: ["html+css", "php", "Mysql"],
@@ -82,7 +82,7 @@ const projects: Project[] = [
   {
     id: 7,
     title: "Authentication Token System",
-    description: "secure authentication using encrypted JWT tokens that can't be forged or modified.",
+    description: "JWT-based login system with tamper-proof token validation.",
     image: "https://iili.io/FndgCPV.png",
     category: "security",
     technologies: ["html\css", "php", "Mysql"],
@@ -91,14 +91,25 @@ const projects: Project[] = [
   },
    {
     id: 8,
-    title: "Buy & Sell Digital Assets website",
-    description: "Fountstream is the safest, fastest, and easiest way to trade synthetic assets, commodities, and currencies. Explore the world of crypto, DeFi, NFTs, and more—all in one place.",
+    title: "Digital Assets Trading Site",
+    description: "Platform to trade crypto, commodities, and synthetic assets.",
     image: "https://iili.io/Fn2sx24.png",
     category: "web",
     technologies: ["html\css", "php", "Mysql"],
     githubUrl: "https://github.com/Cse21-034",
     liveUrl: "https://fountstream.com/"
-  }
+  },
+  {
+  id: 9,
+  title: "Agri Services Website",
+  description: "Farm products & borehole services with gallery, contact, and CMS.",
+  image: "https://iili.io/FxTYdTF.png",
+  category: "web",
+  technologies: ["React", "Express", "PostgreSQL"],
+  githubUrl: "https://github.com/Cse21-034",
+  liveUrl: "https://agri-three-nu.vercel.app"
+}
+
 ];
 
 export function Projects() {
