@@ -43,11 +43,11 @@ const projects: Project[] = [
     id: 1,
     title: "Compound Betting Plan Manager",
     description: "Professional betting plan management app with compound progression tracking, real-time analytics, mobile-responsive design, and comprehensive dashboard for monitoring betting strategies.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    image: "https://iili.io/KFIn5Ga.png",
     category: "web",
     technologies: ["React", "TypeScript", "TailwindCSS", "Tanstack Query", "Zod", "Wouter"],
     githubUrl: "https://github.com/Cse21-034/betting-plan-manager",
-    liveUrl: "https://betting-plans.vercel.app"
+    liveUrl: "https://money-marathon.vercel.app"
   },
   {
     id: 2,
@@ -57,7 +57,7 @@ const projects: Project[] = [
     category: "web",
     technologies: ["React", "TypeScript", "Express", "PostgreSQL", "WebSocket", "Drizzle ORM"],
     githubUrl: "https://github.com/Cse21-034/queue-management",
-    liveUrl: "https://queue-system.vercel.app",
+    liveUrl: "https://smart-queue-4rkj.vercel.app",
     docsUrl: "https://docs.queue-system.com"
   },
   {
@@ -68,7 +68,7 @@ const projects: Project[] = [
     category: "web",
     technologies: ["React", "TypeScript", "Express", "PostgreSQL", "Drizzle ORM", "MVC Architecture"],
     githubUrl: "https://github.com/Cse21-034/ottawa-shipping",
-    liveUrl: "https://ottawa-shipping.vercel.app"
+    liveUrl: "https://ottawa-ndzibs-shipping.vercel.app"
   },
   {
     id: 4,
