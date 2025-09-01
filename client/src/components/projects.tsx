@@ -92,11 +92,11 @@ const projects: Project[] = [
   },
   {
     id: 6,
-    title: "Task Management App",
-    description: "Cross-platform mobile app for productivity management with offline sync, push notifications, task categorization, and collaborative features.",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    title: "Food Recipe App",
+    description: "Android mobile app for food recipe management with offline sync, push notifications, recipe categorization, and collaborative features.",
+    image: "https://iili.io/KfAx9Re.jpg",
     category: "mobile",
-    technologies: ["React Native", "Firebase", "SQLite", "Push Notifications"],
+    technologies: ["Java", "xml", "Firebase", "SQLite", "Push Notifications"],
     githubUrl: "https://github.com/Cse21-034/task-management",
     downloadUrl: "https://play.google.com"
   },
