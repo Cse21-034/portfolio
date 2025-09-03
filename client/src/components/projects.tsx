@@ -71,16 +71,6 @@ const projects: Project[] = [
     liveUrl: "https://ottawa-ndzibs-shipping.vercel.app"
   },
   {
-    id: 4,
-    title: "Kgotla - Discussion Forum",
-    description: "Modern community forum app with PWA support, real-time discussions, voting system, cultural Southern African design elements, and mobile-first approach.",
-    image: "https://images.unsplash.com/photo-1515378791036-0648a814c963?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    category: "mobile",
-    technologies: ["React", "TypeScript", "PWA", "WebSocket", "PostgreSQL", "Replit Auth"],
-    githubUrl: "https://github.com/Cse21-034/kgotla-forum",
-    demoUrl: "https://kgotla-demo.vercel.app"
-  },
-  {
     id: 5,
     title: "E-Commerce Platform",
     description: "Full-stack shop with authentication, shopping cart, secure checkout, admin dashboard, and separated frontend/backend architecture for scalable deployment.",
