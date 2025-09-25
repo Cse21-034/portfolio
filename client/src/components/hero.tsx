@@ -41,13 +41,20 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50/80 to-indigo-50/60 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden pt-16"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50/80 to-indigo-50/60 
+        dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden pt-16"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-400/10 to-teal-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-purple-400/5 to-pink-400/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "4s" }} />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-400/10 to-teal-400/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-purple-400/5 to-pink-400/5 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "4s" }}
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
@@ -73,7 +80,9 @@ export function Hero() {
                     animationIterationCount: "infinite",
                   }}
                 >
-                  <div className={`w-12 h-12 ${color} rounded-2xl flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 backdrop-blur-sm`}>
+                  <div
+                    className={`w-12 h-12 ${color} rounded-2xl flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 backdrop-blur-sm`}
+                  >
                     <Icon className="w-6 h-6 text-white drop-shadow-sm" />
                   </div>
                 </div>
@@ -90,36 +99,49 @@ export function Hero() {
               </div>
 
               {/* Orbital Rings */}
-              <div className={`absolute inset-0 w-36 h-36 border-2 border-slate-200/30 dark:border-slate-600/30 rounded-full transition-all duration-1000 ${
-                isHovered ? "scale-125 opacity-60 animate-spin" : "scale-100 opacity-0"
-              }`} style={{ animationDuration: "8s" }} />
-              <div className={`absolute inset-0 w-36 h-36 border border-slate-200/20 dark:border-slate-600/20 rounded-full transition-all duration-1000 ${
-                isHovered ? "scale-150 opacity-40 animate-spin" : "scale-100 opacity-0"
-              }`} style={{ animationDirection: "reverse", animationDuration: "12s" }} />
+              <div
+                className={`absolute inset-0 w-36 h-36 border-2 border-slate-200/30 dark:border-slate-600/30 rounded-full transition-all duration-1000 ${
+                  isHovered ? "scale-125 opacity-60 animate-spin" : "scale-100 opacity-0"
+                }`}
+                style={{ animationDuration: "8s" }}
+              />
+              <div
+                className={`absolute inset-0 w-36 h-36 border border-slate-200/20 dark:border-slate-600/20 rounded-full transition-all duration-1000 ${
+                  isHovered ? "scale-150 opacity-40 animate-spin" : "scale-100 opacity-0"
+                }`}
+                style={{ animationDirection: "reverse", animationDuration: "12s" }}
+              />
             </div>
           </div>
 
           {/* Typography */}
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 dark:from-white dark:via-slate-200 dark:to-slate-400 bg-clip-text text-transparent leading-tight mb-6">
+          <h1
+            className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 
+              dark:from-white dark:via-slate-200 dark:to-slate-400 bg-clip-text text-transparent leading-tight mb-6"
+          >
             Leatile <br />
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
               Mosimanyana
             </span>
           </h1>
-          <p className="text-2xl md:text-3xl font-medium text-slate-700 dark:text-slate-300">
+
+          <p className="text-xl md:text-2xl font-medium text-slate-700 dark:text-slate-300 mb-4">
             Software Engineer & Cybersecurity Specialist
           </p>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed mt-3">
-            🎓 BSc (Hons) Computer Systems & Software Engineering Graduate
-            <br />
-            💻 Full-Stack Developer | 🔐 Security Expert | 🚀 Innovation Driver
-          </p>
-          <p className="text-sm text-slate-500 dark:text-slate-500 mt-2">
+
+          <div className="space-y-2 text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-6">
+            <p>🎓 BSc (Hons) Computer Systems & Software Engineering Graduate</p>
+            <p>💻 Full-Stack Developer</p>
+            <p>🔐 Security Expert</p>
+            <p>🚀 Innovation Driver</p>
+          </div>
+
+          <p className="text-sm text-slate-500 dark:text-slate-500 mb-10">
             📍 Molepolole, Botswana • Open to Remote Opportunities
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mt-12 mb-12">
+          <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-12">
             {[
               { number: "13+", label: "Projects Built", gradient: "from-blue-600 to-cyan-500" },
               { number: "15+", label: "Technologies", gradient: "from-emerald-500 to-green-500" },
@@ -154,13 +176,14 @@ export function Hero() {
               <Code className="mr-3 h-5 w-5 group-hover:rotate-12 transition-transform" />
               View Portfolio
             </Button>
-            <Button
-              variant="outline"
-              className="group inline-flex items-center px-8 py-4 transition-all duration-300 transform hover:scale-105"
+            <a
+              href="/Leatile_Mosimanyana_CV.pdf"
+              download
+              className="group inline-flex items-center px-8 py-4 border rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600"
             >
               <Download className="mr-3 h-5 w-5 group-hover:animate-pulse" />
               Resume
-            </Button>
+            </a>
           </div>
 
           {/* Social Links */}
