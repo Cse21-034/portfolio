@@ -1,4 +1,4 @@
-import { useState } from "react";
+ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -214,4 +214,64 @@ export function Testimonials() {
         <div className="flex justify-center gap-2 mb-12">
           {testimonials.map((_, index) => (
             <button
-              key={
+              key={index}
+              onClick={() => goToTestimonial(index)}
+              className={`transition-all duration-300 rounded-full ${
+                index === currentIndex
+                  ? "w-8 h-3 bg-blue-600 dark:bg-blue-400"
+                  : "w-3 h-3 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
+              }`}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* All Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((testimonial) => (
+            <Card
+              key={testimonial.id}
+              className={`bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${
+                testimonial.id === current.id ? "ring-2 ring-blue-500" : ""
+              }`}
+              onClick={() => goToTestimonial(testimonials.indexOf(testimonial))}
+            >
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Avatar className="w-12 h-12 border-2 border-blue-500">
+                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                    <AvatarFallback>
+                      {testimonial.name.split(' ').map(n => n[0]).join('')}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-semibold text-gray-900 dark:text-white truncate">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 truncate">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex gap-1 mb-3">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                
+                <p className="text-gray-700 dark:text-gray-300 text-sm line-clamp-4 mb-3">
+                  {testimonial.text}
+                </p>
+                
+                <Badge variant="secondary" className="text-xs">
+                  {testimonial.project}
+                </Badge>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
