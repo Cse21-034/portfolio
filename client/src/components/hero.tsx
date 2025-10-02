@@ -16,9 +16,11 @@ import {
   Terminal,
   Server,
 } from "lucide-react";
+import { useLanguage } from "@/components/language-context";
 
 export function Hero() {
   const [isHovered, setIsHovered] = useState(false);
+  const { t } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -44,7 +46,7 @@ export function Hero() {
       className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50/80 to-indigo-50/60 
         dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden pt-16"
     >
-      {/* Animated Background Elements */}
+      {/* Background visuals */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse" />
         <div
@@ -59,14 +61,13 @@ export function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="text-center">
-          {/* Interactive Avatar with Floating Tech Icons */}
+          {/* Avatar + icons */}
           <div
             className="mb-12 flex justify-center"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
             <div className="relative">
-              {/* Floating Tech Icons */}
               {techIcons.map(({ Icon, color, position, delay }, index) => (
                 <div
                   key={index}
@@ -88,7 +89,7 @@ export function Hero() {
                 </div>
               ))}
 
-              {/* Main Avatar */}
+              {/* Avatar */}
               <div className="relative z-10">
                 <div className="w-36 h-36 rounded-full overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500 border-4 border-white dark:border-slate-700 bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-600 dark:to-slate-700">
                   <img src="https://iili.io/FndI3IS.png" alt="Leatile Mosimanyana" className="w-full h-full object-cover" />
@@ -98,7 +99,7 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* Orbital Rings */}
+              {/* Orbital rings */}
               <div
                 className={`absolute inset-0 w-36 h-36 border-2 border-slate-200/30 dark:border-slate-600/30 rounded-full transition-all duration-1000 ${
                   isHovered ? "scale-125 opacity-60 animate-spin" : "scale-100 opacity-0"
@@ -114,11 +115,9 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Typography */}
-          <h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 
-              dark:from-white dark:via-slate-200 dark:to-slate-400 bg-clip-text text-transparent leading-tight mb-6"
-          >
+          {/* Text content */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 
+              dark:from-white dark:via-slate-200 dark:to-slate-400 bg-clip-text text-transparent leading-tight mb-6">
             Leatile <br />
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
               Mosimanyana
@@ -126,26 +125,26 @@ export function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl font-medium text-slate-700 dark:text-slate-300 mb-4">
-            Software Engineer & Cybersecurity Specialist
+            {t("hero.role")}
           </p>
 
           <div className="space-y-2 text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-6">
-            <p>🎓 BSc (Hons) Computer Systems & Software Engineering Graduate</p>
-            <p>💻 Full-Stack Developer</p>
-            <p>🔐 Security Expert</p>
-            <p>🚀 Innovation Driver</p>
+            <p>🎓 {t("hero.degree")}</p>
+            <p>💻 {t("hero.fullstack")}</p>
+            <p>🔐 {t("hero.security")}</p>
+            <p>🚀 {t("hero.innovation")}</p>
           </div>
 
           <p className="text-sm text-slate-500 dark:text-slate-500 mb-10">
-            📍 Molepolole, Botswana • Open to Remote Opportunities
+            📍 {t("hero.location")}
           </p>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-12">
             {[
-              { number: "13+", label: "Projects Built", gradient: "from-blue-600 to-cyan-500" },
-              { number: "15+", label: "Technologies", gradient: "from-emerald-500 to-green-500" },
-              { number: "3+", label: "Years Experience", gradient: "from-purple-600 to-pink-500" },
+              { number: "13+", label: t("hero.projects"), gradient: "from-blue-600 to-cyan-500" },
+              { number: "15+", label: t("hero.technologies"), gradient: "from-emerald-500 to-green-500" },
+              { number: "3+", label: t("hero.experience"), gradient: "from-purple-600 to-pink-500" },
             ].map((stat, i) => (
               <div
                 key={i}
@@ -166,7 +165,7 @@ export function Hero() {
               className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-600 text-white font-semibold rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105"
             >
               <Mail className="mr-3 h-5 w-5 group-hover:animate-bounce" />
-              Let's Connect
+              {t("hero.connect_btn")}
             </Button>
             <Button
               variant="outline"
@@ -174,7 +173,7 @@ export function Hero() {
               className="group inline-flex items-center px-8 py-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105"
             >
               <Code className="mr-3 h-5 w-5 group-hover:rotate-12 transition-transform" />
-              View Portfolio
+              {t("hero.portfolio_btn")}
             </Button>
             <a
               href="/Leatile_Mosimanyana_CV.pdf"
@@ -182,11 +181,11 @@ export function Hero() {
               className="group inline-flex items-center px-8 py-4 border rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600"
             >
               <Download className="mr-3 h-5 w-5 group-hover:animate-pulse" />
-              Resume
+              {t("hero.resume")}
             </a>
           </div>
 
-          {/* Social Links */}
+          {/* Social links */}
           <div className="flex justify-center space-x-8">
             <a
               href="https://github.com/Cse21-034"
@@ -222,7 +221,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Subtle Grid Overlay */}
+      {/* Subtle grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.03)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)] pointer-events-none" />
     </section>
   );
