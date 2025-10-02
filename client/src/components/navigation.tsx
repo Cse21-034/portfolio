@@ -1,21 +1,27 @@
-import { useState, useEffect } from "react";
+ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Sun, Moon } from "lucide-react";
 import { useTheme } from "./theme-provider";
+import { LanguageSwitcher } from "./language-switcher";
+import { useLanguage } from "./language-context";
 
 const navItems = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "#home", labelKey: "nav.home" },
+  { href: "#about", labelKey: "nav.about" },
+  { href: "#timeline", labelKey: "nav.journey" },
+  { href: "#skills", labelKey: "nav.skills" },
+  { href: "#projects", labelKey: "nav.projects" },
+  { href: "#testimonials", labelKey: "nav.testimonials" },
+  { href: "#blog", labelKey: "nav.blog" },
+  { href: "#contact", labelKey: "nav.contact" },
 ];
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,25 +68,26 @@ export function Navigation() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-6">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className={`transition-colors ${
+                  className={`transition-colors text-sm font-medium ${
                     activeSection === item.href.slice(1)
                       ? "text-blue-600 dark:text-cyan-400"
                       : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-cyan-400"
                   }`}
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </button>
               ))}
             </div>
           </div>
           
-          {/* Theme Toggle and Mobile Menu */}
-          <div className="flex items-center space-x-4">
+          {/* Theme Toggle and Language Switcher */}
+          <div className="flex items-center space-x-3">
+            <LanguageSwitcher />
             <Button
               variant="outline"
               size="icon"
@@ -113,7 +120,7 @@ export function Navigation() {
                           : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-cyan-400"
                       }`}
                     >
-                      {item.label}
+                      {t(item.labelKey)}
                     </button>
                   ))}
                 </div>
