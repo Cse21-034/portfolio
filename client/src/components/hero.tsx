@@ -125,12 +125,12 @@ export function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl font-medium text-slate-700 dark:text-slate-300 mb-4">
-            {t("hero.role")}
+            {t("hero.subtitle")}
           </p>
 
           <div className="space-y-2 text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-6">
-            <p>🎓 {t("hero.degree")}</p>
-            <p>💻 {t("hero.fullstack")}</p>
+            <p>🎓 {t("hero.graduate")}</p>
+            <p>💻 {t("hero.developer")}</p>
             <p>🔐 {t("hero.security")}</p>
             <p>🚀 {t("hero.innovation")}</p>
           </div>
@@ -165,7 +165,7 @@ export function Hero() {
               className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-600 text-white font-semibold rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105"
             >
               <Mail className="mr-3 h-5 w-5 group-hover:animate-bounce" />
-              {t("hero.connect_btn")}
+              {t("hero.connect")}
             </Button>
             <Button
               variant="outline"
@@ -173,7 +173,7 @@ export function Hero() {
               className="group inline-flex items-center px-8 py-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105"
             >
               <Code className="mr-3 h-5 w-5 group-hover:rotate-12 transition-transform" />
-              {t("hero.portfolio_btn")}
+              {t("hero.portfolio")}
             </Button>
             <a
               href="/Leatile_Mosimanyana_CV.pdf"
