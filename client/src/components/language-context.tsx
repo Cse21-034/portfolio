@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+ import { createContext, useContext, useState, ReactNode } from "react";
 
 type Language = "en" | "tn";
 
@@ -13,8 +13,11 @@ const translations = {
     // Navigation
     "nav.home": "Home",
     "nav.about": "About",
+    "nav.journey": "Journey",
     "nav.skills": "Skills",
     "nav.projects": "Projects",
+    "nav.testimonials": "Testimonials",
+    "nav.blog": "Blog",
     "nav.contact": "Contact",
     
     // Hero Section
