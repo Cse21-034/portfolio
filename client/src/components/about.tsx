@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, MapPin, Calendar, Trophy } from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext"; // ✅ import context hook
+ import { useLanguage } from "@/components/language-context";
+
 
 export function About() {
   const { t } = useLanguage(); // ✅ use translations
