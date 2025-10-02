@@ -1,11 +1,12 @@
-import { Navigation } from "@/components/navigation";
+ import { Navigation } from "@/components/navigation";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
+import { Timeline } from "@/components/timeline";
 import { Skills } from "@/components/skills";
 import { GitHubStats } from "@/components/github-stats";
 import { Projects } from "@/components/projects";
 import { Testimonials } from "@/components/testimonials";
-import { Timeline } from "@/components/timeline";
+import { Blog } from "@/components/blog";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { Chatbot } from "@/components/chatbot";
@@ -16,8 +17,12 @@ export default function Home() {
       <Navigation />
       <Hero />
       <About />
+      <Timeline />
       <Skills />
+      <GitHubStats />
       <Projects />
+      <Testimonials />
+      <Blog />
       <Contact />
       <Footer />
       <Chatbot />
