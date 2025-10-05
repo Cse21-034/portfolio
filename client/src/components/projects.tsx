@@ -112,18 +112,9 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Cse21-034/auth-system",
     liveUrl: "https://wifi2.free.nf/?i=1"
   },
+ 
   {
     id: 8,
-    title: "Digital Assets Trading Site",
-    description: "Trading platform for cryptocurrency, commodities, and synthetic assets with real-time market data and secure transaction processing.",
-    image: "https://iili.io/Fn2sx24.png",
-    category: "web",
-    technologies: ["HTML", "CSS", "PHP", "MySQL", "Trading APIs"],
-    githubUrl: "https://github.com/Cse21-034/trading-platform",
-    liveUrl: "https://fountstream.com/"
-  },
-  {
-    id: 9,
     title: "Agri Services Website",
     description: "Agricultural services platform featuring farm products, borehole services, image gallery, contact management, and content management system.",
     image: "https://iili.io/FxTYdTF.png",
