@@ -74,7 +74,7 @@ const projects: Project[] = [
     id: 4,
     title: "Food Recipe App",
     description: "Android mobile app for food recipe management with offline sync, push notifications, recipe categorization, and collaborative features.",
-    image: "https://iili.io/KfAx9Re.jpg",
+    image: "https://iili.io/KXTBomJ.jpg",
     category: "mobile",
     technologies: ["Java", "xml", "Firebase", "SQLite", "Push Notifications"],
     githubUrl: "https://github.com/Cse21-034/task-management",
