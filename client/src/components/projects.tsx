@@ -62,16 +62,6 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Ottawa Ndzibs Shipping",
-    description: "Professional logistics website for China-Botswana freight forwarding with admin CMS, dynamic pricing calculator, service management, and customer inquiry system.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    category: "web",
-    technologies: ["React", "TypeScript", "Express", "PostgreSQL", "Drizzle ORM", "MVC Architecture"],
-    githubUrl: "https://github.com/Cse21-034/ottawa-shipping",
-    liveUrl: "https://ottawa-ndzibs-shipping.vercel.app"
-  },
-  {
-    id: 5,
     title: "E-Commerce Platform",
     description: "Full-stack shop with authentication, shopping cart, secure checkout, admin dashboard, and separated frontend/backend architecture for scalable deployment.",
     image: "https://iili.io/Fn3xRN2.png",
@@ -81,7 +71,7 @@ const projects: Project[] = [
     liveUrl: "https://sho-audio-store-frontend.vercel.app"
   },
   {
-    id: 6,
+    id: 4,
     title: "Food Recipe App",
     description: "Android mobile app for food recipe management with offline sync, push notifications, recipe categorization, and collaborative features.",
     image: "https://iili.io/KfAx9Re.jpg",
@@ -90,18 +80,9 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Cse21-034/task-management",
     downloadUrl: "https://play.google.com"
   },
+
   {
-    id: 7,
-    title: "Network Security Monitor",
-    description: "Real-time network monitoring tool with threat detection, automated response capabilities, comprehensive logging, and security analytics dashboard.",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    category: "security",
-    technologies: ["Python", "Flask", "Wireshark", "Network Analysis"],
-    githubUrl: "https://github.com/Cse21-034/network-monitor",
-    docsUrl: "https://docs.network-monitor.com"
-  },
-  {
-    id: 8,
+    id: 5,
     title: "Portfolio Website",
     description: "Responsive portfolio site with dark mode toggle, smooth animations, contact form, project showcase, and modern design principles.",
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
@@ -111,7 +92,7 @@ const projects: Project[] = [
     liveUrl: "https://portfolio-git-main-leatiles-projects.vercel.app/"
   },
   {
-    id: 9,
+    id: 6,
     title: "AI-Solution Website",
     description: "Business website showcasing AI tools, services portfolio, client testimonials, and comprehensive service management system.",
     image: "https://iili.io/Fn2YFku.png",
@@ -120,18 +101,9 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Cse21-034/ai-solutions",
     liveUrl: "https://shoaudio.rf.gd/?i=1"
   },
+
   {
-    id: 10,
-    title: "Vulnerability Scanner",
-    description: "Automated security assessment tool with comprehensive reporting, remediation suggestions, vulnerability database, and risk analysis features.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    category: "security",
-    technologies: ["Python", "Nmap", "Django", "Security Analysis"],
-    githubUrl: "https://github.com/Cse21-034/vulnerability-scanner",
-    docsUrl: "https://docs.vuln-scanner.com"
-  },
-  {
-    id: 11,
+    id: 7,
     title: "Authentication Token System",
     description: "JWT-based login system with tamper-proof token validation, session management, and secure user authentication protocols.",
     image: "https://iili.io/FndgCPV.png",
@@ -141,7 +113,7 @@ const projects: Project[] = [
     liveUrl: "https://wifi2.free.nf/?i=1"
   },
   {
-    id: 12,
+    id: 8,
     title: "Digital Assets Trading Site",
     description: "Trading platform for cryptocurrency, commodities, and synthetic assets with real-time market data and secure transaction processing.",
     image: "https://iili.io/Fn2sx24.png",
@@ -151,7 +123,7 @@ const projects: Project[] = [
     liveUrl: "https://fountstream.com/"
   },
   {
-    id: 13,
+    id: 9,
     title: "Agri Services Website",
     description: "Agricultural services platform featuring farm products, borehole services, image gallery, contact management, and content management system.",
     image: "https://iili.io/FxTYdTF.png",
