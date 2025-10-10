@@ -15,6 +15,7 @@ import { useLanguage } from "./language-context";
 const navItems = [
   { href: "#home", labelKey: "nav.home" },
   { href: "#about", labelKey: "nav.about" },
+  { href: "#services", labelKey: "nav.services" },
   { href: "#skills", labelKey: "nav.skills" },
   { href: "#projects", labelKey: "nav.projects" },
   { href: "#contact", labelKey: "nav.contact" },
