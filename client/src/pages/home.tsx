@@ -10,6 +10,7 @@ import { Blog } from "@/components/blog";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { Chatbot } from "@/components/chatbot";
+import { Services } from "@/components/services";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <About />
       <Timeline />
+       <Services />
       <Skills />
       <GitHubStats />
       <Projects />
