@@ -68,7 +68,7 @@ const projects: Project[] = [
     category: "web",
     technologies: ["React", "Node.js", "PostgreSQL", "Drizzle ORM", "Passport.js", "Express Session"],
     githubUrl: "https://github.com/Cse21-034/ecommerce-platform",
-    liveUrl: "https://sho-audio-store-frontend.vercel.app"
+    liveUrl: "https://test-front-mocha.vercel.app"
   },
   {
     id: 4,
