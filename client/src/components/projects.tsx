@@ -122,6 +122,16 @@ const projects: Project[] = [
     technologies: ["React", "Express", "PostgreSQL", "Image Management"],
     githubUrl: "https://github.com/Cse21-034/agri-services",
     liveUrl: "https://agri-three-nu.vercel.app"
+  },
+   {
+    id: 9,
+    title: "Loadlink Africa",
+    description: "Connect trucking companies and shipping entities across Africa. Real-time job matching, secure payments, and AI-powered logistics solutions.",
+    image: "https://iili.io/KSorSQj.png",
+    category: "web",
+    technologies: ["React", "Express", "PostgreSQL", "Image Management"],
+    githubUrl: "https://github.com/Cse21-034/agri-services",
+    liveUrl: "https://afri4-7fb5.vercel.app/"
   }
 ];
 
