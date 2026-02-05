@@ -293,7 +293,7 @@ export function Projects() {
           </div>
           <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
             <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-              {[...new Set(projects.flatMap(p => p.technologies))].length}
+              {Array.from(new Set(projects.flatMap(p => p.technologies))).length}
             </div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Technologies</div>
           </div>
