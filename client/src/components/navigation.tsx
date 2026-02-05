@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, Sun, Moon, ChevronDown, Github, BookOpen, Trophy, Clock } from "lucide-react";
+import { Menu, Sun, Moon, ChevronDown, Github, BookOpen, Trophy, Clock, Star } from "lucide-react";
 import { useTheme } from "./theme-provider";
 import { LanguageSwitcher } from "./language-switcher";
 import { useLanguage } from "./language-context";
