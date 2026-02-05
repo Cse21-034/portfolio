@@ -65,10 +65,10 @@ export function Contact() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {t("contact.title")}
+            Get In Touch
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            {t("contact.subtitle")}
+            I am currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, I'll try my best to get back to you!
           </p>
         </div>
 

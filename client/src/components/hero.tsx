@@ -129,7 +129,6 @@ export function Hero() {
           </p>
 
           <div className="space-y-2 text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-6">
-            <p>🎓 {t("hero.graduate")}</p>
             <p>💻 {t("hero.developer")}</p>
             <p>🔐 {t("hero.security")}</p>
             <p>🚀 {t("hero.innovation")}</p>

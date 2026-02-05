@@ -235,11 +235,11 @@ export function Projects() {
             <Briefcase className="w-8 h-8 text-white" />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-6">
-            Featured Projects
+            Professional Portfolio
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            A comprehensive showcase of my recent work spanning web development, mobile applications, and cybersecurity solutions. 
-            Each project demonstrates technical expertise and creative problem-solving across diverse domains.
+            A comprehensive showcase of industrial-grade software solutions spanning full-stack development, mobile applications, and cybersecurity. 
+            Demonstrating expertise in delivering scalable, secure, and user-centric applications.
           </p>
         </div>
 
