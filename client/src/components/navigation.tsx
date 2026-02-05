@@ -22,9 +22,10 @@ const navItems = [
 ];
 
 const moreItems = [
+  { href: "#awards", labelKey: "Awards", icon: Trophy },
   { href: "#timeline", labelKey: "nav.journey", icon: Clock },
   { href: "#github", labelKey: "GitHub Stats", icon: Github },
-  { href: "#testimonials", labelKey: "nav.testimonials", icon: Trophy },
+  { href: "#testimonials", labelKey: "nav.testimonials", icon: Star },
   { href: "#blog", labelKey: "nav.blog", icon: BookOpen },
 ];
 
