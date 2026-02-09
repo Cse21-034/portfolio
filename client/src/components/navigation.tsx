@@ -14,15 +14,15 @@ import { useLanguage } from "./language-context";
 
 const navItems = [
   { href: "#home", labelKey: "nav.home" },
+  { href: "#projects", labelKey: "nav.projects" },
+  { href: "#awards", labelKey: "Awards" },
   { href: "#about", labelKey: "nav.about" },
   { href: "#services", labelKey: "nav.services" },
-  { href: "#skills", labelKey: "nav.skills" },
-  { href: "#projects", labelKey: "nav.projects" },
   { href: "#contact", labelKey: "nav.contact" },
 ];
 
 const moreItems = [
-  { href: "#awards", labelKey: "Awards", icon: Trophy },
+  { href: "#skills", labelKey: "nav.skills", icon: Star },
   { href: "#timeline", labelKey: "nav.journey", icon: Clock },
   { href: "#github", labelKey: "GitHub Stats", icon: Github },
   { href: "#testimonials", labelKey: "nav.testimonials", icon: Star },
@@ -73,41 +73,41 @@ export function Navigation() {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700 shadow-lg" 
-        : "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md"
+        ? "bg-white/98 dark:bg-gray-950/98 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 shadow-md" 
+        : "bg-white/95 dark:bg-gray-950/95 backdrop-blur-lg border-b border-gray-50 dark:border-gray-800/50"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 gap-4">
           {/* Logo */}
           <button
             onClick={() => scrollToSection("#home")}
-            className="flex-shrink-0 group"
+            className="flex-shrink-0 group hover:opacity-80 transition-opacity duration-200"
           >
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center font-bold text-white shadow-lg group-hover:scale-110 transition-transform">
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center font-bold text-white shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                 LM
               </div>
-              <span className="hidden sm:block text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="hidden sm:block text-base font-semibold text-gray-900 dark:text-white tracking-tight">
                 Leatile
               </span>
             </div>
           </button>
           
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-0.5">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg ${
+                className={`relative px-3.5 py-2 text-sm font-medium transition-all duration-200 rounded-md ${
                   activeSection === item.href.slice(1)
-                    ? "text-blue-600 dark:text-cyan-400"
-                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-cyan-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30"
+                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/30"
                 }`}
               >
                 {t(item.labelKey)}
                 {activeSection === item.href.slice(1) && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full" />
+                  <span className="absolute bottom-1 left-3 right-3 h-1 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full" />
                 )}
               </button>
             ))}
@@ -116,31 +116,31 @@ export function Navigation() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
-                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg flex items-center gap-1 ${
+                  className={`relative px-3.5 py-2 text-sm font-medium transition-all duration-200 rounded-md flex items-center gap-1.5 ${
                     isMoreActive
-                      ? "text-blue-600 dark:text-cyan-400"
-                      : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-cyan-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/30"
                   }`}
                 >
                   More
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200" />
                   {isMoreActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full" />
+                    <span className="absolute bottom-1 left-3 right-3 h-1 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full" />
                   )}
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48">
+              <DropdownMenuContent align="end" className="w-52 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-lg">
                 {moreItems.map((item) => (
                   <DropdownMenuItem
                     key={item.href}
                     onClick={() => scrollToSection(item.href)}
-                    className={`cursor-pointer ${
+                    className={`cursor-pointer text-sm py-2.5 px-3 transition-colors duration-150 ${
                       activeSection === item.href.slice(1)
-                        ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-cyan-400"
-                        : ""
+                        ? "bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400"
+                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
                     }`}
                   >
-                    <item.icon className="w-4 h-4 mr-2" />
+                    <item.icon className="w-4 h-4 mr-2.5" />
                     {typeof item.labelKey === 'string' && item.labelKey.includes('.') 
                       ? t(item.labelKey) 
                       : item.labelKey}
@@ -151,7 +151,7 @@ export function Navigation() {
           </div>
           
           {/* Right Side Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 ml-auto">
             {/* Language Switcher */}
             <div className="hidden sm:block">
               <LanguageSwitcher />
@@ -162,12 +162,12 @@ export function Navigation() {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 transition-colors duration-200"
             >
               {theme === "dark" ? (
-                <Sun className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                <Sun className="h-4 w-4" />
               ) : (
-                <Moon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                <Moon className="h-4 w-4" />
               )}
             </Button>
             
@@ -177,76 +177,76 @@ export function Navigation() {
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="lg:hidden rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                  className="lg:hidden rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 transition-colors duration-200"
                 >
-                  <Menu className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                  <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] sm:w-[350px]">
+              <SheetContent side="right" className="w-[280px] sm:w-[350px] border-l border-gray-200 dark:border-gray-700">
                 <div className="flex flex-col h-full">
                   {/* Mobile Header */}
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="flex items-center gap-2">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center font-bold text-white shadow-lg">
+                  <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-100 dark:border-gray-800">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center font-bold text-white shadow-md">
                         LM
                       </div>
-                      <span className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      <span className="text-base font-semibold text-gray-900 dark:text-white tracking-tight">
                         Menu
                       </span>
                     </div>
                   </div>
 
                   {/* Mobile Navigation Links */}
-                  <nav className="flex-1 space-y-2">
+                  <nav className="flex-1 space-y-1">
                     {navItems.map((item) => (
                       <button
                         key={item.href}
                         onClick={() => scrollToSection(item.href)}
-                        className={`w-full text-left px-4 py-3 rounded-lg transition-all ${
+                        className={`w-full text-left px-4 py-3 rounded-md transition-all duration-200 ${
                           activeSection === item.href.slice(1)
-                            ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                            : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                            ? "bg-blue-50 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 font-medium"
+                            : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
                         }`}
                       >
-                        <span className="font-medium">{t(item.labelKey)}</span>
+                        {t(item.labelKey)}
                       </button>
                     ))}
 
                     {/* More Section in Mobile */}
-                    <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                      <p className="text-xs text-gray-500 dark:text-gray-400 px-4 mb-2">MORE</p>
+                    <div className="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700">
+                      <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 px-4 mb-2.5 uppercase tracking-wider">More</p>
                       {moreItems.map((item) => (
                         <button
                           key={item.href}
                           onClick={() => scrollToSection(item.href)}
-                          className={`w-full text-left px-4 py-3 rounded-lg transition-all flex items-center gap-2 ${
+                          className={`w-full text-left px-4 py-3 rounded-md transition-all duration-200 flex items-center gap-2.5 ${
                             activeSection === item.href.slice(1)
-                              ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                              : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                              ? "bg-blue-50 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 font-medium"
+                              : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
                           }`}
                         >
-                          <item.icon className="w-4 h-4" />
-                          <span className="font-medium">
-                            {typeof item.labelKey === 'string' && item.labelKey.includes('.') 
-                              ? t(item.labelKey) 
-                              : item.labelKey}
-                          </span>
+                          <item.icon className="w-4 h-4 flex-shrink-0" />
+                          {typeof item.labelKey === 'string' && item.labelKey.includes('.') 
+                            ? t(item.labelKey) 
+                            : item.labelKey}
                         </button>
                       ))}
                     </div>
                   </nav>
 
                   {/* Mobile Footer Actions */}
-                  <div className="pt-6 border-t border-gray-200 dark:border-gray-700 space-y-3">
-                    <LanguageSwitcher />
+                  <div className="pt-6 border-t border-gray-200 dark:border-gray-700 space-y-4">
+                    <div>
+                      <LanguageSwitcher />
+                    </div>
                     
-                    <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
-                      <span>Theme</span>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="font-medium text-gray-700 dark:text-gray-300">Theme</span>
                       <Button
                         variant="outline"
                         size="sm"
                         onClick={toggleTheme}
-                        className="rounded-lg"
+                        className="rounded-md border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300"
                       >
                         {theme === "dark" ? (
                           <>
@@ -269,15 +269,7 @@ export function Navigation() {
         </div>
       </div>
 
-      {/* Progress Bar */}
-      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-200 dark:bg-gray-800">
-        <div 
-          className="h-full bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 transition-all duration-300"
-          style={{ 
-            width: `${([...navItems, ...moreItems].findIndex(item => item.href.slice(1) === activeSection) + 1) / (navItems.length + moreItems.length) * 100}%` 
-          }}
-        />
-      </div>
+
     </nav>
   );
 }
