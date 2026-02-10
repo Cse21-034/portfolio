@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -255,11 +256,7 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center text-gray-600 dark:text-gray-400">
-          <p>&copy; 2024 Leatile Mosimanyana. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
