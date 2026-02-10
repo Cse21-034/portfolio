@@ -85,16 +85,42 @@ export function Hero() {
               </Button>
             </div>
 
-            {/* Brand logos */}
+            {/* Social links */}
             <div className="pt-8">
               <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-6 uppercase tracking-wider">
-                Work For All This Brand & Client
+                Connect With Me
               </p>
-              <div className="flex flex-wrap items-center gap-8 opacity-60 hover:opacity-100 transition-opacity">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Slack_Technologies_Logo.svg/2560px-Slack_Technologies_Logo.svg.png" alt="Slack" className="h-8 grayscale hover:grayscale-0 transition" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Airbnb_Logo.svg/2560px-Airbnb_Logo.svg.png" alt="Airbnb" className="h-8 grayscale hover:grayscale-0 transition" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Dropbox_Logo.svg/2560px-Dropbox_Logo.svg.png" alt="Dropbox" className="h-8 grayscale hover:grayscale-0 transition" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Upwork-logo.svg/2560px-Upwork-logo.svg.png" alt="Upwork" className="h-8 grayscale hover:grayscale-0 transition" />
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href="https://github.com/Cse21-034"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+                >
+                  <Github className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-slate-200" />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+                >
+                  <Linkedin className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-blue-600" />
+                </a>
+                <a
+                  href="mailto:leatilemanando@gmail.com"
+                  className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+                >
+                  <Mail className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-green-600" />
+                </a>
+                <a
+                  href="https://portfolio-git-main-leatiles-projects.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+                >
+                  <ExternalLink className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-purple-600" />
+                </a>
               </div>
             </div>
           </div>
@@ -212,40 +238,6 @@ export function Hero() {
               >
                 <Download className="mr-2 h-5 w-5 group-hover:animate-pulse" />
                 {t("hero.resume")}
-              </a>
-            </div>
-
-            {/* Social icons */}
-            <div className="flex gap-4">
-              <a
-                href="https://github.com/Cse21-034"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-              >
-                <Github className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-slate-200" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-              >
-                <Linkedin className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-blue-600" />
-              </a>
-              <a
-                href="mailto:leatilemanando@gmail.com"
-                className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-              >
-                <Mail className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-green-600" />
-              </a>
-              <a
-                href="https://portfolio-git-main-leatiles-projects.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-              >
-                <ExternalLink className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-purple-600" />
               </a>
             </div>
 
