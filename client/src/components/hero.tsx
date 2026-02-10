@@ -116,8 +116,11 @@ export function Hero() {
               </div>
 
               {/* Floating badge - Best Design Awards (top right) */}
-              <div 
-                className={`absolute -top-6 -right-6 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-4 flex items-center gap-3 border border-orange-100 dark:border-slate-700 transition-all duration-700 ${
+              <a 
+                href="https://portfolio-git-main-leatiles-projects.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`absolute -top-6 -right-6 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-4 flex items-center gap-3 border border-orange-100 dark:border-slate-700 transition-all duration-700 hover:scale-105 cursor-pointer ${
                   isHovered ? 'translate-y-2 rotate-3' : ''
                 }`}
                 style={{ animationDelay: "0.1s" }}
@@ -129,11 +132,14 @@ export function Hero() {
                   <div className="text-sm font-bold text-slate-900 dark:text-white">Best Design</div>
                   <div className="text-xs text-slate-500 dark:text-slate-400">Awards</div>
                 </div>
-              </div>
+              </a>
 
               {/* Floating badge - UI/UX (left middle) */}
-              <div 
-                className={`absolute top-1/2 -left-8 transform -translate-y-1/2 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-4 flex items-center gap-3 border border-emerald-100 dark:border-slate-700 transition-all duration-700 ${
+              <a 
+                href="https://portfolio-git-main-leatiles-projects.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`absolute top-1/2 -left-8 transform -translate-y-1/2 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-4 flex items-center gap-3 border border-emerald-100 dark:border-slate-700 transition-all duration-700 hover:scale-105 cursor-pointer ${
                   isHovered ? 'translate-x-2 -rotate-3' : ''
                 }`}
                 style={{ animationDelay: "0.2s" }}
@@ -146,11 +152,14 @@ export function Hero() {
                   <div className="text-xs text-slate-500 dark:text-slate-400">Lorem ipsum dummy</div>
                   <div className="text-xs text-slate-500 dark:text-slate-400">text are visually</div>
                 </div>
-              </div>
+              </a>
 
               {/* Floating badge - Shopify (bottom right) */}
-              <div 
-                className={`absolute -bottom-6 -right-6 bg-white dark:bg-slate-800 rounded-full w-32 h-32 shadow-2xl flex items-center justify-center border-4 border-purple-100 dark:border-slate-700 transition-all duration-700 ${
+              <a 
+                href="https://portfolio-git-main-leatiles-projects.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`absolute -bottom-6 -right-6 bg-white dark:bg-slate-800 rounded-full w-32 h-32 shadow-2xl flex items-center justify-center border-4 border-purple-100 dark:border-slate-700 transition-all duration-700 hover:scale-105 cursor-pointer ${
                   isHovered ? '-translate-y-2 rotate-6' : ''
                 }`}
                 style={{ animationDelay: "0.3s" }}
@@ -159,7 +168,7 @@ export function Hero() {
                   <div className="text-4xl mb-1">🛍️</div>
                   <div className="text-xs font-bold text-slate-900 dark:text-white">shopify</div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
