@@ -3,14 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useLocation } from "wouter";
-import { ArrowRight, CheckCircle, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle, TrendingUp, Users, Code, Shield } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
-export default function Home() {
+export default function EnterpriseHome() {
   const [, setLocation] = useLocation();
   const [email, setEmail] = useState("");
   const { toast } = useToast();
@@ -138,20 +138,24 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
+                icon: <Code className="h-8 w-8" />,
                 title: "Web Development",
                 description: "Custom websites and applications built with cutting-edge technology",
               },
               {
+                icon: <Shield className="h-8 w-8" />,
                 title: "Enterprise Security",
                 description: "Bank-level security for your digital assets and customer data",
               },
               {
+                icon: <Users className="h-8 w-8" />,
                 title: "Consulting",
                 description: "Strategic guidance from industry veterans and thought leaders",
               },
             ].map((service, i) => (
               <Card key={i} className="border-2 border-amber-200 dark:border-amber-800 hover:border-amber-400 dark:hover:border-amber-600 transition-all">
                 <CardContent className="p-6">
+                  <div className="mb-4 text-amber-600 dark:text-amber-400">{service.icon}</div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                     {service.title}
                   </h3>
