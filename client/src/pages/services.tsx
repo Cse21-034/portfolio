@@ -5,96 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 import {
-  Globe,
-  Smartphone,
   Code,
-  Zap,
-  Shield,
-  TrendingUp,
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
 
-const services = [
-  {
-    icon: <Globe className="h-8 w-8" />,
-    title: "Web Development",
-    description:
-      "Full-stack web applications built with modern technologies like React, TypeScript, and Node.js. Responsive, scalable, and optimized for performance.",
-    features: [
-      "React & Next.js applications",
-      "Responsive design for all devices",
-      "API development & integration",
-      "Database design & optimization",
-    ],
-    color: "from-blue-600 to-cyan-500",
-  },
-  {
-    icon: <Smartphone className="h-8 w-8" />,
-    title: "Mobile Solutions",
-    description:
-      "Cross-platform mobile applications that deliver seamless user experiences on iOS and Android devices.",
-    features: [
-      "React Native development",
-      "Native iOS & Android apps",
-      "Mobile-first design",
-      "Offline functionality",
-    ],
-    color: "from-emerald-600 to-green-500",
-  },
-  {
-    icon: <Code className="h-8 w-8" />,
-    title: "Backend Development",
-    description:
-      "Robust server-side solutions and RESTful APIs that power your applications with security and reliability.",
-    features: [
-      "Node.js & Express backends",
-      "RESTful & GraphQL APIs",
-      "Database architecture",
-      "Cloud deployment",
-    ],
-    color: "from-purple-600 to-indigo-500",
-  },
-  {
-    icon: <Shield className="h-8 w-8" />,
-    title: "Security & DevOps",
-    description:
-      "Implement best practices for security, continuous integration, and deployment to keep your applications safe and up-to-date.",
-    features: [
-      "Security audits & testing",
-      "CI/CD pipeline setup",
-      "Docker & containerization",
-      "Infrastructure management",
-    ],
-    color: "from-red-600 to-pink-500",
-  },
-  {
-    icon: <TrendingUp className="h-8 w-8" />,
-    title: "Performance Optimization",
-    description:
-      "Analyze, optimize, and enhance your application's performance to deliver lightning-fast experiences to your users.",
-    features: [
-      "Code optimization",
-      "Database indexing",
-      "Caching strategies",
-      "Load testing & monitoring",
-    ],
-    color: "from-orange-600 to-amber-500",
-  },
-  {
-    icon: <Zap className="h-8 w-8" />,
-    title: "Technical Consulting",
-    description:
-      "Strategic guidance on technology selection, architecture design, and best practices for your project or business.",
-    features: [
-      "Technology stack recommendations",
-      "Architecture planning",
-      "Code reviews & audits",
-      "Team mentoring",
-    ],
-    color: "from-yellow-600 to-orange-500",
-  },
-];
+const services = [];
 
 export default function Services() {
   const [, setLocation] = useLocation();
@@ -115,58 +31,6 @@ export default function Services() {
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Comprehensive technology services to help your business innovate, scale, and succeed in the digital era.
           </p>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className="border-2 border-amber-200 dark:border-amber-800 hover:border-amber-400 dark:hover:border-amber-600 hover:shadow-xl transition-all duration-300"
-              >
-                <CardContent className="p-8">
-                  {/* Icon */}
-                  <div
-                    className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center text-white mb-6`}
-                  >
-                    {service.icon}
-                  </div>
-
-                  {/* Title & Description */}
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6">
-                    {service.description}
-                  </p>
-
-                  {/* Features */}
-                  <ul className="space-y-3 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"
-                      >
-                        <CheckCircle className="h-5 w-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button
-                    onClick={() => setLocation("/contact")}
-                    className="w-full bg-amber-600 hover:bg-amber-700 text-white"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
