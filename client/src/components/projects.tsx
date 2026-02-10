@@ -231,16 +231,11 @@ export function Projects() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6">
-            <Briefcase className="w-8 h-8 text-white" />
-          </div>
+           
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-6">
-            Professional Portfolio
+            My Projects
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            A comprehensive showcase of industrial-grade software solutions spanning full-stack development, mobile applications, and cybersecurity. 
-            Demonstrating expertise in delivering scalable, secure, and user-centric applications.
-          </p>
+         
         </div>
 
         {/* Search Bar */}
@@ -277,30 +272,6 @@ export function Projects() {
               </Badge>
             </Button>
           ))}
-        </div>
-
-        {/* Projects Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-2xl mx-auto">
-          <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
-            <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{projects.length}</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Total Projects</div>
-          </div>
-          <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
-            <div className="text-2xl font-bold text-green-600 dark:text-green-400">
-              {projects.filter(p => p.liveUrl).length}
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Live Demos</div>
-          </div>
-          <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
-            <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-              {Array.from(new Set(projects.flatMap(p => p.technologies))).length}
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Technologies</div>
-          </div>
-          <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
-            <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">3</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Categories</div>
-          </div>
         </div>
         
         {/* Projects Grid */}
