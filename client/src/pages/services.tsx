@@ -1,544 +1,694 @@
-import React from "react";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Check, ArrowRight, Building2, Palette, Megaphone, Store } from "lucide-react";
 import { useLocation } from "wouter";
+import {
+  Globe,
+  Smartphone,
+  Code,
+  Zap,
+  Shield,
+  TrendingUp,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
 
-const AdvertiseWithUsPage = () => {
+const services = [
+  {
+    icon: <Globe className="h-8 w-8" />,
+    title: "Web Development",
+    description:
+      "Full-stack web applications built with modern technologies like React, TypeScript, and Node.js. Responsive, scalable, and optimized for performance.",
+    features: [
+      "React & Next.js applications",
+      "Responsive design for all devices",
+      "API development & integration",
+      "Database design & optimization",
+    ],
+    color: "from-blue-600 to-cyan-500",
+  },
+  {
+    icon: <Smartphone className="h-8 w-8" />,
+    title: "Mobile Solutions",
+    description:
+      "Cross-platform mobile applications that deliver seamless user experiences on iOS and Android devices.",
+    features: [
+      "React Native development",
+      "Native iOS & Android apps",
+      "Mobile-first design",
+      "Offline functionality",
+    ],
+    color: "from-emerald-600 to-green-500",
+  },
+  {
+    icon: <Code className="h-8 w-8" />,
+    title: "Backend Development",
+    description:
+      "Robust server-side solutions and RESTful APIs that power your applications with security and reliability.",
+    features: [
+      "Node.js & Express backends",
+      "RESTful & GraphQL APIs",
+      "Database architecture",
+      "Cloud deployment",
+    ],
+    color: "from-purple-600 to-indigo-500",
+  },
+  {
+    icon: <Shield className="h-8 w-8" />,
+    title: "Security & DevOps",
+    description:
+      "Implement best practices for security, continuous integration, and deployment to keep your applications safe and up-to-date.",
+    features: [
+      "Security audits & testing",
+      "CI/CD pipeline setup",
+      "Docker & containerization",
+      "Infrastructure management",
+    ],
+    color: "from-red-600 to-pink-500",
+  },
+  {
+    icon: <TrendingUp className="h-8 w-8" />,
+    title: "Performance Optimization",
+    description:
+      "Analyze, optimize, and enhance your application's performance to deliver lightning-fast experiences to your users.",
+    features: [
+      "Code optimization",
+      "Database indexing",
+      "Caching strategies",
+      "Load testing & monitoring",
+    ],
+    color: "from-orange-600 to-amber-500",
+  },
+  {
+    icon: <Zap className="h-8 w-8" />,
+    title: "Technical Consulting",
+    description:
+      "Strategic guidance on technology selection, architecture design, and best practices for your project or business.",
+    features: [
+      "Technology stack recommendations",
+      "Architecture planning",
+      "Code reviews & audits",
+      "Team mentoring",
+    ],
+    color: "from-yellow-600 to-orange-500",
+  },
+];
+
+export default function Services() {
   const [, setLocation] = useLocation();
-  const brandColors = {
-    primary: "#27bcc0", // Teal
-    emerald: "#84aa32", // Green
-    amber: "#612C30",   // Burgundy
-    rose: "#017082",    // Dark Teal/Blue
-  };
 
-  // Data from the PDF organized by categories
-  const valueAddedPackages = [
-    {
-      name: "Package 1",
-      price: "P100–500",
-      period: "p/m",
-      description: "Basic membership with essential features",
-      features: [
-        "Free membership on the online directory",
-        "Free business advertisement",
-        "Unlimited photos under business profile",
-        "eCommerce portal for online transactions",
-        "2 free products listings",
-        "Unlimited photos under product listing",
-        "Business domain",
-        "Business emails (1-5)",
-        "Cloud storage under business name (at least 30GB per user)",
-        "Microsoft Office licenses per user for up to devices",
-        "Intranet for your company",
-        "Free training for up to 3 users"
-      ],
-    },
-    {
-      name: "Package 2",
-      price: "P1000",
-      period: "p/m",
-      description: "Enhanced package with social media features",
-      features: [
-        "All items under Package 1",
-        "Cloud storage under business name (up to 1TB per user)",
-        "WhatsApp for Business connected to social media",
-        "Social Media Business Pages (2 platforms of choice)",
-        "Revamp if pages already exist",
-        "1 cover photo design per page",
-        "1 profile picture design per page",
-        "2 flyer designs per page per month",
-        "1 limited paid/boosted social media marketing advert*",
-        "*Ts & Cs apply"
-      ],
-      popular: true,
-    }
-  ];
+  return (
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <Navigation />
 
-  const webDevelopmentPackages = [
-    {
-      name: "Informational Website",
-      price: "P3500",
-      period: "one-time",
-      description: "Basic business information website",
-      paymentPlan: {
-        deposit: "BWP1500",
-        monthly: "BWP550",
-        duration: "6 months"
-      },
-      features: [
-        "General information about your business",
-        "Contact details",
-        "Business services",
-        "Contact form for clients",
-        "Google map embedded",
-        "Social media links",
-        "Web hosting",
-        "SEO/SEM"
-      ],
-    },
-    {
-      name: "CRM Website",
-      price: "P4500",
-      period: "one-time",
-      description: "Customer Relationship Management website",
-      paymentPlan: {
-        deposit: "BWP1500",
-        monthly: "BWP600",
-        duration: "6 months"
-      },
-      features: [
-        "Lead management",
-        "Contact management",
-        "Email system",
-        "Reporting and analytics",
-        "Database management",
-        "Document management"
-      ],
-    },
-    {
-      name: "E-commerce Website",
-      price: "P???", // Price missing in PDF, using placeholder
-      period: "one-time",
-      description: "Complete online store solution",
-      paymentPlan: {
-        deposit: "BWP2500",
-        monthly: "BWP1600",
-        duration: "6 months"
-      },
-      features: [
-        "Fully functional ecommerce website",
-        "Multiple payment options",
-        "Email marketing features",
-        "Promotion and discount tools",
-        "SEO Capabilities",
-        "Reporting tools"
-      ],
-      popular: true,
-    }
-  ];
-
-  const brandingPackages = [
-    {
-      name: "Package 1",
-      price: "P9500",
-      period: "one-time",
-      description: "Basic branding essentials",
-      features: [
-        "Logo design",
-        "Business card",
-        "Business profile",
-        "Flyers and Letterhead"
-      ],
-    },
-    {
-      name: "Package 2",
-      price: "P1,900",
-      period: "one-time",
-      description: "Enhanced branding package",
-      features: [
-        "Banner design",
-        "Logo design",
-        "Business card",
-        "Business profile",
-        "Flyers and Letterhead",
-        "Brochure",
-        "Invoice"
-      ],
-    },
-    {
-      name: "Package 3",
-      price: "P2,400",
-      period: "one-time",
-      description: "Comprehensive branding suite",
-      features: [
-        "Banner design",
-        "Logo design",
-        "Business card",
-        "Business profile",
-        "Flyers and Letterhead",
-        "Posters",
-        "Brochure",
-        "Invoice",
-        "Quotation book",
-        "Social media cover"
-      ],
-    },
-    {
-      name: "Package 4",
-      price: "P5,000",
-      period: "one-time",
-      description: "Complete branding with printing",
-      features: [
-        "Banner design",
-        "Logo design",
-        "Business card",
-        "Business profile",
-        "Flyers and Letterhead",
-        "Posters",
-        "Brochure",
-        "Invoice",
-        "Quotation book",
-        "Social media cover",
-        "With printing and free delivery"
-      ],
-      popular: true,
-    }
-  ];
-
-  const socialMediaPackages = [
-    {
-      name: "Package 1",
-      price: "P650",
-      period: "one-time",
-      description: "Basic Facebook setup",
-      features: ["Create Facebook page"],
-      platform: "Facebook"
-    },
-    {
-      name: "Package 2",
-      price: "P1,200",
-      period: "p/m",
-      description: "Facebook management",
-      features: [
-        "Business Page Setup",
-        "1 designed weekly post",
-        "One sponsored post per month",
-        "Maximum reach 7000 users",
-        "Monthly reporting on social media traffic analysis",
-        "Standard feedback template highlighting key indicators"
-      ],
-      platform: "Facebook"
-    },
-    {
-      name: "Package 3",
-      price: "P2,300",
-      period: "p/m",
-      description: "Facebook & Instagram management",
-      features: [
-        "Business Page Setup",
-        "1 designed weekly post",
-        "2 sponsored posts per month",
-        "Maximum reach (14000+) users",
-        "Monthly reporting on social media traffic analysis",
-        "24/7 management of social media pages",
-        "1 x 30 seconds animated OR product introduction video per month"
-      ],
-      platform: "Facebook & Instagram",
-      popular: true,
-    },
-    {
-      name: "Package 4",
-      price: "P3,500",
-      period: "p/m",
-      description: "Multi-platform management",
-      features: [
-        "Business Page Setup (Facebook, Instagram & Twitter)",
-        "2 designed weekly posts",
-        "2 sponsored posts per month",
-        "Maximum reach (14000+) users",
-        "Monthly reporting on social media traffic analysis"
-      ],
-      platform: "Facebook, Instagram & Twitter"
-    }
-  ];
-
-  const ServiceSection = ({ title, description, packages, icon: Icon, colorType = "primary" }) => {
-    // Get color based on type
-    const getColor = (type: string) => {
-      switch(type) {
-        case "primary": return brandColors.primary;
-        case "emerald": return brandColors.emerald;
-        case "amber": return brandColors.amber;
-        case "rose": return brandColors.rose;
-        default: return brandColors.primary;
-      }
-    };
-
-    const color = getColor(colorType);
-    
-    return (
-      <div className="mb-20">
-        <div className="flex items-center gap-4 mb-8">
-          <div 
-            className="p-3 rounded-xl"
-            style={{ backgroundColor: `${color}20` }} // 20% opacity
-          >
-            <Icon style={{ color }} className="w-8 h-8" />
-          </div>
-          <div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-neutral-100">{title}</h2>
-            <p className="text-neutral-600 dark:text-neutral-400 mt-2">{description}</p>
-          </div>
+      {/* Hero */}
+      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <Badge className="mb-4 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">
+            Professional Services
+          </Badge>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+            Services & Solutions
+          </h1>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Comprehensive technology services to help your business innovate, scale, and succeed in the digital era.
+          </p>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {packages.map((pkg, index) => (
-            <div
-              key={index}
-              className={`relative rounded-2xl overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl border ${
-                pkg.popular
-                  ? "scale-105 md:scale-100 md:z-10"
-                  : "bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 border-neutral-200 dark:border-neutral-700"
-              }`}
-              style={pkg.popular ? { 
-                backgroundColor: color,
-                color: 'white',
-                borderColor: color
-              } : {}}
-            >
-              {pkg.popular && (
-                <div className="absolute top-0 right-0 bg-amber-400 text-neutral-900 px-4 py-1 text-sm font-semibold rounded-bl-lg z-10">
-                  Most Popular
-                </div>
-              )}
-
-              <div className="p-6 relative">
-                {/* Plan Name */}
-                <h3 className="text-xl font-bold mb-2">{pkg.name}</h3>
-                {pkg.platform && (
-                  <div className="mb-2">
-                    <span 
-                      className="text-xs px-2 py-1 rounded-full"
-                      style={pkg.popular ? { 
-                        backgroundColor: 'rgba(255, 255, 255, 0.2)' 
-                      } : { 
-                        backgroundColor: `${color}20` 
-                      }}
-                    >
-                      {pkg.platform}
-                    </span>
+      {/* Services Grid */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="border-2 border-amber-200 dark:border-amber-800 hover:border-amber-400 dark:hover:border-amber-600 hover:shadow-xl transition-all duration-300"
+              >
+                <CardContent className="p-8">
+                  {/* Icon */}
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center text-white mb-6`}
+                  >
+                    {service.icon}
                   </div>
-                )}
-                <p 
-                  className="text-sm mb-4"
-                  style={pkg.popular ? { color: 'rgba(255, 255, 255, 0.9)' } : { color: '#6b7280' }}
-                >
-                  {pkg.description}
-                </p>
 
-                {/* Price */}
-                <div className="mb-4">
-                  <span className="text-3xl font-bold">{pkg.price}</span>
-                  <span 
-                    className="ml-2"
-                    style={pkg.popular ? { color: 'rgba(255, 255, 255, 0.8)' } : { color: '#6b7280' }}
-                  >
-                    {pkg.period}
-                  </span>
-                </div>
-
-                {/* Payment Plan (if exists) */}
-                {pkg.paymentPlan && (
-                  <div 
-                    className="mb-4 p-3 rounded-lg"
-                    style={pkg.popular ? { 
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)' 
-                    } : { 
-                      backgroundColor: '#f9fafb' 
-                    }}
-                  >
-                    <p className="text-sm font-semibold mb-1">Payment Plan:</p>
-                    <div className="text-sm space-y-1">
-                      <div className="flex justify-between">
-                        <span>Deposit:</span>
-                        <span className="font-semibold">{pkg.paymentPlan.deposit}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Monthly ({pkg.paymentPlan.duration}):</span>
-                        <span className="font-semibold">{pkg.paymentPlan.monthly}</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* CTA Button */}
-                <div className="mb-6">
-                  {pkg.popular ? (
-                    <Button 
-                      className="w-full bg-white text-neutral-900 hover:bg-neutral-100"
-                    >
-                      Get Started Now
-                    </Button>
-                  ) : (
-                    <Button 
-                      variant="outline"
-                      className="w-full border-neutral-300 dark:border-neutral-600 text-neutral-900 dark:text-neutral-100"
-                    >
-                      Choose Plan
-                    </Button>
-                  )}
-                </div>
-
-                {/* Features List */}
-                <div className="space-y-3">
-                  <p 
-                    className="text-sm font-semibold"
-                    style={pkg.popular ? { color: 'rgba(255, 255, 255, 0.9)' } : { color: '#6b7280' }}
-                  >
-                    What's included:
+                  {/* Title & Description */}
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-6">
+                    {service.description}
                   </p>
-                  <ul className="space-y-2">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start gap-2">
-                        <Check 
-                          className="w-4 h-4 flex-shrink-0 mt-1"
-                          style={pkg.popular ? { color: 'rgba(255, 255, 255, 0.8)' } : { color: '#16a34a' }}
-                        />
-                        <span className="text-sm">{feature}</span>
+
+                  {/* Features */}
+                  <ul className="space-y-3 mb-6">
+                    {service.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"
+                      >
+                        <CheckCircle className="h-5 w-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
-              </div>
+
+                  <Button
+                    onClick={() => setLocation("/contact")}
+                    className="w-full bg-amber-600 hover:bg-amber-700 text-white"
+                  >
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Packages Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50">
+        <div className="max-w-7xl mx-auto">
+          {/* Value Added Services */}
+          <div className="mb-20">
+            <div className="mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                Value Added Services
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400">
+                Comprehensive business solutions to enhance your online presence
+              </p>
             </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
 
-  return (
-    <div className="nc-AdvertiseWithUs bg-neutral-50 dark:bg-neutral-900 min-h-screen py-16 lg:py-28">
-      {/* Header */}
-      <div className="container text-center mb-16">
-        <h1 className="text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
-          Namibia Services
-        </h1>
-        <h2 className="text-2xl lg:text-3xl font-semibold mb-2" style={{ color: brandColors.primary }}>
-          Beyond Excellence
-        </h2>
-        <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-          Choose from our comprehensive range of services to grow your business.
-          All prices may vary based on client requirements.
-        </p>
-      </div>
-
-      <div className="container">
-        {/* Value Added Services */}
-        <ServiceSection
-          title="Value Added Services"
-          description="Comprehensive business solutions to enhance your online presence"
-          packages={valueAddedPackages}
-          icon={Store}
-          colorType="primary"
-        />
-
-        {/* Web Development */}
-        <ServiceSection
-          title="Web Development"
-          description="Professional websites tailored to your business needs"
-          packages={webDevelopmentPackages}
-          icon={Building2}
-          colorType="emerald"
-        />
-
-        {/* Branding Suite/Graphic Design */}
-        <ServiceSection
-          title="Branding Suite / Graphic Design"
-          description="Complete branding solutions to establish your business identity"
-          packages={brandingPackages}
-          icon={Palette}
-          colorType="amber"
-        />
-
-        {/* Social Media Marketing */}
-        <ServiceSection
-          title="Social Media Marketing"
-          description="Boost your social media presence with our expert management"
-          packages={socialMediaPackages}
-          icon={Megaphone}
-          colorType="rose"
-        />
-      </div>
-
-      {/* Note about pricing */}
-      <div className="container mt-20">
-        <div 
-          className="rounded-2xl p-8 text-center text-white"
-          style={{ 
-            background: `linear-gradient(135deg, ${brandColors.primary}, ${brandColors.rose})`
-          }}
-        >
-
-        </div>
-      </div>
-      
-
-      {/* FAQ Section */}
-      <div className="container mt-20">
-        <h3 className="text-3xl font-bold text-neutral-900 dark:text-neutral-100 text-center mb-12">
-          Frequently Asked Questions
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {[
-            {
-              q: "How long does it take to set up my service?",
-              a: "Setup time varies by service. Value added services are typically activated within 24 hours, while web development and branding projects may take 1-4 weeks depending on complexity.",
-            },
-            {
-              q: "Can I customize my package?",
-              a: "Yes! We offer custom quotes for added features. Contact our team to discuss your specific requirements.",
-            },
-            {
-              q: "What payment methods do you accept?",
-              a: "We accept bank transfers, mobile money (Orange Money, Vodafone), and credit cards for your convenience.",
-            },
-            {
-              q: "Is there a contract for monthly services?",
-              a: "Our monthly services are flexible with no long-term contracts. You can cancel or modify your plan as needed.",
-            },
-            {
-              q: "Do you provide support after setup?",
-              a: "Yes! All our packages include support. Higher-tier packages include more comprehensive support options.",
-            },
-            {
-              q: "Can I upgrade my package later?",
-              a: "Absolutely! You can upgrade or downgrade your package at any time. Changes will be reflected in your next billing cycle.",
-            },
-          ].map((faq, idx) => (
-            <div key={idx} className="bg-white dark:bg-neutral-800 p-6 rounded-xl border border-neutral-200 dark:border-neutral-700">
-              <h4 className="font-semibold text-neutral-900 dark:text-neutral-100 mb-3">
-                {faq.q}
-              </h4>
-              <p className="text-neutral-600 dark:text-neutral-400 text-sm">{faq.a}</p>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  name: "Basic Package",
+                  price: "P100–500",
+                  period: "p/m",
+                  description: "Essential features to get started",
+                  features: [
+                    "Free membership on the online directory",
+                    "Free business advertisement",
+                    "Unlimited photos under business profile",
+                    "eCommerce portal for online transactions",
+                    "2 free products listings",
+                    "Business domain & emails (1-5)",
+                    "Cloud storage (30GB per user)",
+                    "Free training for up to 3 users"
+                  ],
+                },
+                {
+                  name: "Professional Package",
+                  price: "P1,000",
+                  period: "p/m",
+                  description: "Enhanced with social media features",
+                  popular: true,
+                  features: [
+                    "All Basic Package features",
+                    "Cloud storage (1TB per user)",
+                    "WhatsApp for Business integration",
+                    "Social Media Business Pages (2 platforms)",
+                    "Page design & branding",
+                    "2 flyer designs per month",
+                    "1 social media marketing advert",
+                    "24/7 support"
+                  ],
+                },
+              ].map((pkg, idx) => (
+                <Card
+                  key={idx}
+                  className={`border-2 ${pkg.popular ? 'border-amber-400 bg-amber-50 dark:bg-amber-950/20 dark:border-amber-600' : 'border-gray-200 dark:border-gray-700'}`}
+                >
+                  <CardContent className="p-8">
+                    {pkg.popular && (
+                      <div className="mb-4">
+                        <Badge className="bg-amber-600 text-white">Most Popular</Badge>
+                      </div>
+                    )}
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      {pkg.name}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">{pkg.description}</p>
+                    <div className="mb-6">
+                      <span className="text-4xl font-bold text-gray-900 dark:text-white">
+                        {pkg.price}
+                      </span>
+                      <span className="text-gray-600 dark:text-gray-400 ml-2">
+                        {pkg.period}
+                      </span>
+                    </div>
+                    <ul className="space-y-2 mb-6">
+                      {pkg.features.map((feature, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                          <CheckCircle className="h-4 w-4 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button
+                      onClick={() => setLocation("/contact")}
+                      className={pkg.popular ? "w-full bg-amber-600 hover:bg-amber-700 text-white" : "w-full"}
+                      variant={pkg.popular ? "default" : "outline"}
+                    >
+                      Choose Plan
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
 
-      {/* Contact CTA */}
-      <div className="container mt-20">
-        <div className="bg-white dark:bg-neutral-800 rounded-2xl p-8 lg:p-12 border border-neutral-200 dark:border-neutral-700">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
-              Need a Custom Solution?
-            </h3>
-            <p className="text-neutral-600 dark:text-neutral-400 mb-8 max-w-2xl mx-auto">
-              Our team can create a tailored package specifically for your business needs. Get in touch with us to discuss your requirements.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                onClick={() => setLocation("/contact")}
-                className="flex items-center justify-center gap-2"
-              >
-                Contact Our Sales Team
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-              <Button 
-                variant="outline"
-                onClick={() => setLocation("/")}
-                className="flex items-center justify-center gap-2"
-              >
-                Back to Home
-                <ArrowRight className="w-5 h-5" />
-              </Button>
+          {/* Web Development Packages */}
+          <div className="mb-20">
+            <div className="mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                Web Development
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400">
+                Professional websites tailored to your business needs
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  name: "Informational Website",
+                  price: "P3,500",
+                  period: "one-time",
+                  description: "Basic business information website",
+                  paymentPlan: "Deposit: BWP1,500 + BWP550/month (6 months)",
+                  features: [
+                    "Business information",
+                    "Contact details & forms",
+                    "Google map embedded",
+                    "Social media links",
+                    "Web hosting",
+                    "SEO/SEM optimization"
+                  ],
+                },
+                {
+                  name: "CRM Website",
+                  price: "P4,500",
+                  period: "one-time",
+                  description: "Customer Relationship Management",
+                  paymentPlan: "Deposit: BWP1,500 + BWP600/month (6 months)",
+                  popular: true,
+                  features: [
+                    "Lead management",
+                    "Contact management",
+                    "Email system integration",
+                    "Reporting & analytics",
+                    "Database management",
+                    "Document management"
+                  ],
+                },
+                {
+                  name: "E-commerce Website",
+                  price: "P5,500",
+                  period: "one-time",
+                  description: "Complete online store solution",
+                  paymentPlan: "Deposit: BWP2,500 + BWP1,600/month (6 months)",
+                  features: [
+                    "Fully functional store",
+                    "Multiple payment options",
+                    "Email marketing",
+                    "Promotion & discount tools",
+                    "SEO capabilities",
+                    "Advanced reporting"
+                  ],
+                },
+              ].map((pkg, idx) => (
+                <Card
+                  key={idx}
+                  className={`border-2 ${pkg.popular ? 'border-amber-400 bg-amber-50 dark:bg-amber-950/20 dark:border-amber-600 md:scale-105' : 'border-gray-200 dark:border-gray-700'}`}
+                >
+                  <CardContent className="p-8">
+                    {pkg.popular && (
+                      <div className="mb-4">
+                        <Badge className="bg-amber-600 text-white">Most Popular</Badge>
+                      </div>
+                    )}
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      {pkg.name}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">{pkg.description}</p>
+                    <div className="mb-4">
+                      <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                        {pkg.price}
+                      </span>
+                      <span className="text-gray-600 dark:text-gray-400 ml-2 text-sm">
+                        {pkg.period}
+                      </span>
+                    </div>
+                    <div className="mb-6 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                      <p className="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
+                        Payment Plan:
+                      </p>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">
+                        {pkg.paymentPlan}
+                      </p>
+                    </div>
+                    <ul className="space-y-2 mb-6">
+                      {pkg.features.map((feature, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                          <CheckCircle className="h-4 w-4 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button
+                      onClick={() => setLocation("/contact")}
+                      className={pkg.popular ? "w-full bg-amber-600 hover:bg-amber-700 text-white" : "w-full"}
+                      variant={pkg.popular ? "default" : "outline"}
+                    >
+                      Choose Plan
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Branding Suite Packages */}
+          <div className="mb-20">
+            <div className="mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                Branding Suite
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400">
+                Complete branding solutions to establish your business identity
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  name: "Starter",
+                  price: "P950",
+                  period: "one-time",
+                  features: ["Logo design", "Business card", "Business profile", "Letterhead"]
+                },
+                {
+                  name: "Professional",
+                  price: "P1,900",
+                  period: "one-time",
+                  features: ["Banner design", "Logo design", "Business card", "Profile", "Letterhead", "Brochure", "Invoice"]
+                },
+                {
+                  name: "Complete",
+                  price: "P2,400",
+                  period: "one-time",
+                  features: ["Banner & Logo", "Business card", "Flyers & Letterhead", "Posters", "Brochure", "Invoice", "Quotation book", "Social media cover"]
+                },
+                {
+                  name: "Premium",
+                  price: "P5,000",
+                  period: "one-time",
+                  popular: true,
+                  features: ["All Complete items", "Professional printing", "Free delivery", "Brand guidelines", "Social media assets", "Email signature", "Website mockup"]
+                },
+              ].map((pkg, idx) => (
+                <Card
+                  key={idx}
+                  className={`border-2 ${pkg.popular ? 'border-amber-400 bg-amber-50 dark:bg-amber-950/20 dark:border-amber-600' : 'border-gray-200 dark:border-gray-700'}`}
+                >
+                  <CardContent className="p-6">
+                    {pkg.popular && (
+                      <div className="mb-4">
+                        <Badge className="bg-amber-600 text-white text-xs">Popular</Badge>
+                      </div>
+                    )}
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                      {pkg.name}
+                    </h3>
+                    <div className="mb-4">
+                      <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                        {pkg.price}
+                      </span>
+                    </div>
+                    <ul className="space-y-2 mb-6">
+                      {pkg.features.map((feature, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-gray-700 dark:text-gray-300">
+                          <CheckCircle className="h-3 w-3 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button
+                      onClick={() => setLocation("/contact")}
+                      className={pkg.popular ? "w-full bg-amber-600 hover:bg-amber-700 text-white text-sm" : "w-full text-sm"}
+                      variant={pkg.popular ? "default" : "outline"}
+                    >
+                      Select
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Social Media Marketing Packages */}
+          <div>
+            <div className="mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                Social Media Marketing
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400">
+                Boost your social media presence with expert management
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  name: "Facebook Setup",
+                  price: "P650",
+                  period: "one-time",
+                  platform: "Facebook",
+                  features: ["Business page creation", "Profile optimization", "Cover design", "Initial setup"]
+                },
+                {
+                  name: "Facebook Mgmt",
+                  price: "P1,200",
+                  period: "p/m",
+                  platform: "Facebook",
+                  features: ["Page management", "1 weekly post", "1 sponsored post/month", "Reach up to 7,000", "Analytics reports", "Engagement monitoring"]
+                },
+                {
+                  name: "Multi-Platform",
+                  price: "P2,300",
+                  period: "p/m",
+                  platform: "Facebook & Instagram",
+                  popular: true,
+                  features: ["Both platform setup", "2 weekly posts", "2 sponsored posts/month", "Reach 14,000+ users", "Video content (30sec)", "Advanced analytics", "24/7 management"]
+                },
+                {
+                  name: "Full Suite",
+                  price: "P3,500",
+                  period: "p/m",
+                  platform: "All Platforms",
+                  features: ["Facebook, Instagram, Twitter", "Daily content updates", "2 sponsored posts", "14,000+ reach", "Video creation", "Community management", "Monthly reports"]
+                },
+              ].map((pkg, idx) => (
+                <Card
+                  key={idx}
+                  className={`border-2 ${pkg.popular ? 'border-amber-400 bg-amber-50 dark:bg-amber-950/20 dark:border-amber-600' : 'border-gray-200 dark:border-gray-700'}`}
+                >
+                  <CardContent className="p-6">
+                    {pkg.popular && (
+                      <div className="mb-4">
+                        <Badge className="bg-amber-600 text-white text-xs">Popular</Badge>
+                      </div>
+                    )}
+                    <div className="mb-3">
+                      <Badge variant="outline" className="text-xs">
+                        {pkg.platform}
+                      </Badge>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                      {pkg.name}
+                    </h3>
+                    <div className="mb-4">
+                      <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                        {pkg.price}
+                      </span>
+                      <span className="text-gray-600 dark:text-gray-400 ml-2 text-sm">
+                        {pkg.period}
+                      </span>
+                    </div>
+                    <ul className="space-y-2 mb-6">
+                      {pkg.features.map((feature, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-gray-700 dark:text-gray-300">
+                          <CheckCircle className="h-3 w-3 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button
+                      onClick={() => setLocation("/contact")}
+                      className={pkg.popular ? "w-full bg-amber-600 hover:bg-amber-700 text-white text-sm" : "w-full text-sm"}
+                      variant={pkg.popular ? "default" : "outline"}
+                    >
+                      Learn More
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">
+              How We Work
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+              Our Development Process
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              A transparent, collaborative approach to every project
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Discovery",
+                desc: "Understand your goals, challenges, and vision for the project",
+              },
+              {
+                step: "02",
+                title: "Planning",
+                desc: "Create a detailed roadmap and technical architecture",
+              },
+              {
+                step: "03",
+                title: "Development",
+                desc: "Build your solution with clean code and best practices",
+              },
+              {
+                step: "04",
+                title: "Delivery",
+                desc: "Deploy, test, and provide ongoing support",
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="relative">
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-amber-600 to-amber-500 text-white rounded-full flex items-center justify-center font-bold text-2xl mb-4">
+                    {item.step}
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 dark:text-white text-center mb-2">
+                    {item.title}
+                  </h4>
+                  <p className="text-center text-gray-600 dark:text-gray-400 text-sm">
+                    {item.desc}
+                  </p>
+                </div>
+                {idx < 3 && (
+                  <div className="hidden md:block absolute top-8 -right-4 w-8 h-1 bg-amber-600 dark:bg-amber-400" />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+              Why Work With Me
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Proven expertise in delivering high-quality solutions that drive real business value
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Experience",
+                description:
+                  "Years of experience building scalable solutions for diverse industries and project sizes",
+              },
+              {
+                title: "Quality",
+                description:
+                  "Clean, maintainable code following industry best practices and design patterns",
+              },
+              {
+                title: "Communication",
+                description:
+                  "Transparent communication throughout the project lifecycle with regular updates",
+              },
+              {
+                title: "Performance",
+                description:
+                  "Optimized solutions that are fast, secure, and built for growth",
+              },
+              {
+                title: "Support",
+                description:
+                  "Ongoing support and maintenance to ensure your application runs smoothly",
+              },
+              {
+                title: "Innovation",
+                description:
+                  "Staying current with latest technologies and best practices in the industry",
+              },
+            ].map((item, idx) => (
+              <Card
+                key={idx}
+                className="border border-gray-200 dark:border-gray-700 hover:border-amber-400 dark:hover:border-amber-600 transition-colors"
+              >
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="h-6 w-6 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-bold text-gray-900 dark:text-white mb-2">
+                        {item.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Let's discuss how I can help bring your project to life. Get in touch to schedule a consultation.
+          </p>
+          <Button
+            onClick={() => setLocation("/contact")}
+            className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-6 rounded-lg"
+          >
+            Schedule a Consultation
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
-};
-
-export default AdvertiseWithUsPage;
+}
