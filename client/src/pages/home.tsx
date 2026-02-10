@@ -1,13 +1,13 @@
 import { Navigation } from "@/components/navigation";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
-import { Timeline } from "@/components/timeline";
-import { Skills } from "@/components/skills";
-import { GitHubStats } from "@/components/github-stats";
+//import { Timeline } from "@/components/timeline";
+//import { Skills } from "@/components/skills";
+//import { GitHubStats } from "@/components/github-stats";
 import { Projects } from "@/components/projects";
 import { Awards } from "@/components/awards";
 import { Testimonials } from "@/components/testimonials";
-import { Blog } from "@/components/blog";
+//import { Blog } from "@/components/blog";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { Chatbot } from "@/components/chatbot";
@@ -19,14 +19,16 @@ export default function Home() {
       <Navigation />
       <Hero />
       <About />
-      <Timeline />
-       <Services />
-      <Skills />
-      <Awards />
-      <GitHubStats />
       <Projects />
+      <Awards />
+    {/* <Timeline />*/}
+       <Services />
+      {/* <Skills />*/}
+      
+     {/*  <GitHubStats />*/}
+      
       <Testimonials />
-      <Blog />
+      {/* <Blog /> */}
       <Contact />
       <Footer />
       <Chatbot />
