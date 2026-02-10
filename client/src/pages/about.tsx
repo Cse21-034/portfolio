@@ -16,10 +16,10 @@ export default function About() {
       {/* Hero */}
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <Badge className="mb-4 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">
+          <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
             About Us
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-4">
             Crafting Excellence in Digital Solutions
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -33,22 +33,22 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+              <h2 className="text-4xl font-bold text-black dark:text-white mb-6">
                 Our Story
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                 Founded with a mission to bridge the gap between visionary ideas and technical excellence, we've been at the forefront of digital innovation for over a decade.
               </p>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                 What started as a small team of passionate developers has evolved into a full-service digital agency trusted by Fortune 500 companies, ambitious startups, and innovative entrepreneurs alike.
               </p>
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 We believe that technology should empower businesses, not complicate them. Every solution we build is crafted with precision, integrity, and a deep understanding of our clients' unique challenges.
               </p>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-amber-600/20 rounded-2xl blur-3xl" />
-              <div className="relative bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-950/40 dark:to-amber-900/40 rounded-2xl p-8 border border-amber-200 dark:border-amber-800">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/10 dark:from-white/10 dark:to-white/10 rounded-2xl blur-3xl" />
+              <div className="relative bg-gradient-to-br from-white/30 to-white/20 dark:from-black/30 dark:to-black/20 rounded-2xl p-8 border border-black/20 dark:border-white/20 backdrop-blur-lg">
                 <div className="space-y-6">
                   {[
                     { icon: <Award className="h-6 w-6" />, text: "Industry-Leading Expertise" },
@@ -58,10 +58,10 @@ export default function About() {
                   ].map((item, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-4 p-4 bg-white/60 dark:bg-gray-800/60 rounded-lg"
+                      className="flex items-center gap-4 p-4 bg-white/40 dark:bg-gray-900/40 rounded-lg backdrop-blur-sm"
                     >
-                      <div className="text-amber-600 dark:text-amber-400">{item.icon}</div>
-                      <span className="font-semibold text-gray-900 dark:text-white">
+                      <div className="text-black dark:text-white">{item.icon}</div>
+                      <span className="font-semibold text-black dark:text-white">
                         {item.text}
                       </span>
                     </div>
@@ -77,10 +77,10 @@ export default function About() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
               Our Core Values
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-xl text-gray-700 dark:text-gray-300">
               Guiding principles that define who we are
             </p>
           </div>
@@ -106,13 +106,13 @@ export default function About() {
             ].map((value, i) => (
               <Card
                 key={i}
-                className="border-2 border-amber-200 dark:border-amber-800 text-center"
+                className="border border-black/20 dark:border-white/20 bg-white/30 dark:bg-black/30 backdrop-blur-md text-center"
               >
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-3">
                     {value.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">{value.description}</p>
+                  <p className="text-gray-700 dark:text-gray-300">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -124,10 +124,10 @@ export default function About() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">
+            <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
               Leadership Team
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
               Meet The Experts
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
@@ -155,17 +155,17 @@ export default function About() {
             ].map((member, i) => (
               <Card
                 key={i}
-                className="border-2 border-amber-200 dark:border-amber-800 text-center"
+                className="border border-black/20 dark:border-white/20 bg-white/30 dark:bg-black/30 backdrop-blur-md text-center"
               >
                 <CardContent className="p-8">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 mx-auto mb-6" />
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-r from-black to-gray-700 dark:from-white dark:to-gray-300 mx-auto mb-6" />
+                  <h3 className="text-xl font-bold text-black dark:text-white mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-amber-600 dark:text-amber-400 font-semibold mb-3">
+                  <p className="text-black dark:text-white font-semibold mb-3">
                     {member.role}
                   </p>
-                  <p className="text-gray-600 dark:text-gray-400">{member.bio}</p>
+                  <p className="text-gray-700 dark:text-gray-300">{member.bio}</p>
                 </CardContent>
               </Card>
             ))}
@@ -184,10 +184,10 @@ export default function About() {
               { number: "50+", label: "Awards Won" },
             ].map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="text-5xl font-bold text-amber-600 dark:text-amber-400 mb-2">
+                <div className="text-5xl font-bold text-black dark:text-white mb-2">
                   {stat.number}
                 </div>
-                <div className="text-lg text-gray-600 dark:text-gray-400">{stat.label}</div>
+                <div className="text-lg text-gray-700 dark:text-gray-300">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -197,15 +197,15 @@ export default function About() {
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
             Ready to Partner With Us?
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
             Let's discuss how we can help achieve your business goals
           </p>
           <Button
             onClick={() => setLocation("/contact")}
-            className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-6 rounded-lg"
+            className="bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black text-lg px-8 py-6 rounded-lg"
           >
             Schedule Consultation
             <ArrowRight className="ml-2 h-5 w-5" />

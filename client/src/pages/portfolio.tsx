@@ -61,7 +61,7 @@ export default function Portfolio() {
       {/* Hero */}
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <Badge className="mb-4 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">
+          <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
             Our Work
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
@@ -80,7 +80,7 @@ export default function Portfolio() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="border-2 border-amber-200 dark:border-amber-800 hover:border-amber-400 dark:hover:border-amber-600 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
+                className="border border-black/20 dark:border-white/20 hover:border-black/40 dark:hover:border-white/40 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col backdrop-blur-md"
               >
                 {/* Image */}
                 <div className={`h-40 ${project.image}`} />
@@ -98,7 +98,7 @@ export default function Portfolio() {
                   <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
                     {Object.entries(project.stats).map(([key, value]) => (
                       <div key={key}>
-                        <div className="font-bold text-amber-600 dark:text-amber-400">
+                        <div className="font-bold text-black dark:text-white">
                           {value}
                         </div>
                         <div className="text-xs text-gray-600 dark:text-gray-400 capitalize">
@@ -114,7 +114,7 @@ export default function Portfolio() {
                       <Badge
                         key={idx}
                         variant="secondary"
-                        className="text-xs bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-200"
+                        className="text-xs bg-black/10 dark:bg-white/10 text-black dark:text-white"
                       >
                         {tag}
                       </Badge>
@@ -125,7 +125,7 @@ export default function Portfolio() {
                   <div className="flex gap-2">
                     <Button
                       variant="outline"
-                      className="flex-1 border-amber-600 text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/30"
+                      className="flex-1 border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-900"
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />
                       View
@@ -163,10 +163,10 @@ export default function Portfolio() {
             ].map((stat, i) => (
               <Card
                 key={i}
-                className="border-2 border-amber-200 dark:border-amber-800 text-center"
+                className="border border-black/20 dark:border-white/20 text-center backdrop-blur-md"
               >
                 <CardContent className="p-8">
-                  <div className="text-4xl font-bold text-amber-600 dark:text-amber-400 mb-2">
+                  <div className="text-4xl font-bold text-black dark:text-white mb-2">
                     {stat.number}
                   </div>
                   <div className="text-gray-600 dark:text-gray-400">{stat.label}</div>
@@ -181,7 +181,7 @@ export default function Portfolio() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">
+            <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
               Client Feedback
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -212,10 +212,10 @@ export default function Portfolio() {
             ].map((testimonial, i) => (
               <Card
                 key={i}
-                className="border-2 border-amber-200 dark:border-amber-800"
+                className="border border-black/20 dark:border-white/20 backdrop-blur-md"
               >
                 <CardContent className="p-8">
-                  <div className="text-amber-600 dark:text-amber-400 text-3xl mb-4">
+                  <div className="text-black dark:text-white text-3xl mb-4">
                     "
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 mb-6">
@@ -247,7 +247,7 @@ export default function Portfolio() {
           </p>
           <Button
             onClick={() => setLocation("/contact")}
-            className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-6 rounded-lg"
+            className="bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black text-lg px-8 py-6 rounded-lg"
           >
             Get In Touch
             <ArrowRight className="ml-2 h-5 w-5" />

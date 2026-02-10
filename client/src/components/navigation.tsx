@@ -74,7 +74,7 @@ export function Navigation() {
             className="flex-shrink-0 group hover:opacity-80 transition-opacity duration-200"
           >
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 bg-gradient-to-br from-amber-500 to-amber-600 rounded-lg flex items-center justify-center font-bold text-white shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+              <div className="w-9 h-9 bg-gradient-to-br from-black to-gray-700 dark:from-white dark:to-gray-300 rounded-lg flex items-center justify-center font-bold text-white dark:text-black shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                 LM
               </div>
               <span className="hidden sm:block text-base font-semibold text-gray-900 dark:text-white tracking-tight">
@@ -91,13 +91,13 @@ export function Navigation() {
                 onClick={() => navigateTo(item.href)}
                 className={`relative px-3.5 py-2 text-sm font-medium transition-all duration-200 rounded-md ${
                   location === item.href
-                    ? "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30"
+                    ? "text-black dark:text-white bg-black/10 dark:bg-white/10 backdrop-blur-md"
                     : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/30"
                 }`}
               >
                 {t(item.labelKey)}
                 {location === item.href && (
-                  <span className="absolute bottom-1 left-3 right-3 h-1 bg-gradient-to-r from-amber-500 to-amber-400 rounded-full" />
+                  <span className="absolute bottom-1 left-3 right-3 h-1 bg-gradient-to-r from-black to-gray-700 dark:from-white dark:to-gray-300 rounded-full" />
                 )}
               </button>
             ))}
@@ -108,14 +108,14 @@ export function Navigation() {
                 <button
                   className={`relative px-3.5 py-2 text-sm font-medium transition-all duration-200 rounded-md flex items-center gap-1.5 ${
                     isMoreActive
-                      ? "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30"
+                      ? "text-black dark:text-white bg-black/10 dark:bg-white/10 backdrop-blur-md"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/30"
                   }`}
                 >
                   More
                   <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200" />
                   {isMoreActive && (
-                    <span className="absolute bottom-1 left-3 right-3 h-1 bg-gradient-to-r from-amber-500 to-amber-400 rounded-full" />
+                    <span className="absolute bottom-1 left-3 right-3 h-1 bg-gradient-to-r from-black to-gray-700 dark:from-white dark:to-gray-300 rounded-full" />
                   )}
                 </button>
               </DropdownMenuTrigger>
@@ -126,7 +126,7 @@ export function Navigation() {
                     onClick={() => scrollToSection(item.href)}
                     className={`cursor-pointer text-sm py-2.5 px-3 transition-colors duration-150 ${
                       location === item.href
-                        ? "bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400"
+                        ? "bg-black/10 dark:bg-white/10 text-black dark:text-white backdrop-blur-md"
                         : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
                     }`}
                   >
@@ -177,7 +177,7 @@ export function Navigation() {
                   {/* Mobile Header */}
                   <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-100 dark:border-gray-800">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-9 h-9 bg-gradient-to-br from-amber-500 to-amber-600 rounded-lg flex items-center justify-center font-bold text-white shadow-md">
+                      <div className="w-9 h-9 bg-gradient-to-br from-black to-gray-700 dark:from-white dark:to-gray-300 rounded-lg flex items-center justify-center font-bold text-white dark:text-black shadow-md\">
                         LM
                       </div>
                       <span className="text-base font-semibold text-gray-900 dark:text-white tracking-tight">

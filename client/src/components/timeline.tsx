@@ -94,7 +94,7 @@ const timelineEvents: TimelineEvent[] = [
     subtitle: "Real-World Applications",
     description: "Created multiple production-ready applications for real clients including agricultural services, shipping companies, and trading platforms. Focused on scalable, secure solutions.",
     icon: Zap,
-    color: "from-yellow-500 to-amber-500",
+    color: "from-gray-600 to-black dark:from-gray-300 dark:to-white",
     achievements: [
       "Delivered 6+ client projects",
       "Built betting plan manager",

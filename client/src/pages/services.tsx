@@ -22,28 +22,28 @@ export default function Services() {
       {/* Hero */}
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <Badge className="mb-4 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">
+          <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
             Professional Services
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-4">
             Services & Solutions
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Comprehensive technology services to help your business innovate, scale, and succeed in the digital era.
           </p>
         </div>
       </section>
 
       {/* Pricing Packages Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white dark:from-black dark:via-gray-950 dark:to-black">
         <div className="max-w-7xl mx-auto">
           {/* Value Added Services */}
           <div className="mb-20">
             <div className="mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+              <h2 className="text-3xl lg:text-4xl font-bold text-black dark:text-white mb-2">
                 Value Added Services
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-700 dark:text-gray-300">
                 Comprehensive business solutions to enhance your online presence
               </p>
             </div>
@@ -86,37 +86,41 @@ export default function Services() {
               ].map((pkg, idx) => (
                 <Card
                   key={idx}
-                  className={`border-2 ${pkg.popular ? 'border-amber-400 bg-amber-50 dark:bg-amber-950/20 dark:border-amber-600' : 'border-gray-200 dark:border-gray-700'}`}
+                  className={`border backdrop-blur-lg transition-all duration-300 ${
+                    pkg.popular 
+                      ? 'border-black/30 dark:border-white/30 bg-black/5 dark:bg-white/5 ring-2 ring-black dark:ring-white' 
+                      : 'border-black/20 dark:border-white/20 bg-white/30 dark:bg-black/30'
+                  }`}
                 >
                   <CardContent className="p-8">
                     {pkg.popular && (
                       <div className="mb-4">
-                        <Badge className="bg-amber-600 text-white">Most Popular</Badge>
+                        <Badge className="bg-black text-white dark:bg-white dark:text-black">Most Popular</Badge>
                       </div>
                     )}
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
                       {pkg.name}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">{pkg.description}</p>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4">{pkg.description}</p>
                     <div className="mb-6">
-                      <span className="text-4xl font-bold text-gray-900 dark:text-white">
+                      <span className="text-4xl font-bold text-black dark:text-white">
                         {pkg.price}
                       </span>
-                      <span className="text-gray-600 dark:text-gray-400 ml-2">
+                      <span className="text-gray-700 dark:text-gray-300 ml-2">
                         {pkg.period}
                       </span>
                     </div>
                     <ul className="space-y-2 mb-6">
                       {pkg.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                          <CheckCircle className="h-4 w-4 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-black dark:text-white flex-shrink-0 mt-0.5" />
                           <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                     <Button
                       onClick={() => setLocation("/contact")}
-                      className={pkg.popular ? "w-full bg-amber-600 hover:bg-amber-700 text-white" : "w-full"}
+                      className={pkg.popular ? "w-full bg-black text-white dark:bg-white dark:text-black hover:bg-gray-900 dark:hover:bg-gray-100" : "w-full bg-white text-black border border-black dark:bg-black dark:text-white dark:border-white hover:bg-gray-100 dark:hover:bg-gray-900"}
                       variant={pkg.popular ? "default" : "outline"}
                     >
                       Choose Plan
@@ -130,10 +134,10 @@ export default function Services() {
           {/* Web Development Packages */}
           <div className="mb-20">
             <div className="mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+              <h2 className="text-3xl lg:text-4xl font-bold text-black dark:text-white mb-2">
                 Web Development
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-700 dark:text-gray-300">
                 Professional websites tailored to your business needs
               </p>
             </div>
@@ -189,45 +193,45 @@ export default function Services() {
               ].map((pkg, idx) => (
                 <Card
                   key={idx}
-                  className={`border-2 ${pkg.popular ? 'border-amber-400 bg-amber-50 dark:bg-amber-950/20 dark:border-amber-600 md:scale-105' : 'border-gray-200 dark:border-gray-700'}`}
+                  className={`border backdrop-blur-lg transition-all duration-300 ${pkg.popular ? 'border-black/30 dark:border-white/30 bg-black/5 dark:bg-white/5 ring-2 ring-black dark:ring-white md:scale-105' : 'border-black/20 dark:border-white/20 bg-white/30 dark:bg-black/30'}`}
                 >
                   <CardContent className="p-8">
                     {pkg.popular && (
                       <div className="mb-4">
-                        <Badge className="bg-amber-600 text-white">Most Popular</Badge>
+                        <Badge className="bg-black text-white dark:bg-white dark:text-black">Most Popular</Badge>
                       </div>
                     )}
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
                       {pkg.name}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">{pkg.description}</p>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4 text-sm">{pkg.description}</p>
                     <div className="mb-4">
-                      <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                      <span className="text-3xl font-bold text-black dark:text-white">
                         {pkg.price}
                       </span>
-                      <span className="text-gray-600 dark:text-gray-400 ml-2 text-sm">
+                      <span className="text-gray-700 dark:text-gray-300 ml-2 text-sm">
                         {pkg.period}
                       </span>
                     </div>
-                    <div className="mb-6 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                      <p className="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
+                    <div className="mb-6 p-3 bg-black/5 dark:bg-white/5 backdrop-blur-sm rounded-lg border border-black/10 dark:border-white/10">
+                      <p className="text-xs font-semibold text-black dark:text-white mb-1">
                         Payment Plan:
                       </p>
-                      <p className="text-xs text-gray-600 dark:text-gray-400">
+                      <p className="text-xs text-gray-700 dark:text-gray-300">
                         {pkg.paymentPlan}
                       </p>
                     </div>
                     <ul className="space-y-2 mb-6">
                       {pkg.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                          <CheckCircle className="h-4 w-4 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="h-4 w-4 text-black dark:text-white flex-shrink-0 mt-0.5" />
                           <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                     <Button
                       onClick={() => setLocation("/contact")}
-                      className={pkg.popular ? "w-full bg-amber-600 hover:bg-amber-700 text-white" : "w-full"}
+                      className={pkg.popular ? "w-full bg-black text-white dark:bg-white dark:text-black hover:bg-gray-900 dark:hover:bg-gray-100" : "w-full bg-white text-black border border-black dark:bg-black dark:text-white dark:border-white hover:bg-gray-100 dark:hover:bg-gray-900"}
                       variant={pkg.popular ? "default" : "outline"}
                     >
                       Choose Plan
@@ -241,10 +245,10 @@ export default function Services() {
           {/* Branding Suite Packages */}
           <div className="mb-20">
             <div className="mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+              <h2 className="text-3xl lg:text-4xl font-bold text-black dark:text-white mb-2">
                 Branding Suite
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-700 dark:text-gray-300">
                 Complete branding solutions to establish your business identity
               </p>
             </div>
@@ -279,33 +283,33 @@ export default function Services() {
               ].map((pkg, idx) => (
                 <Card
                   key={idx}
-                  className={`border-2 ${pkg.popular ? 'border-amber-400 bg-amber-50 dark:bg-amber-950/20 dark:border-amber-600' : 'border-gray-200 dark:border-gray-700'}`}
+                  className={`border backdrop-blur-lg transition-all duration-300 ${pkg.popular ? 'border-black/30 dark:border-white/30 bg-black/5 dark:bg-white/5 ring-2 ring-black dark:ring-white' : 'border-black/20 dark:border-white/20 bg-white/30 dark:bg-black/30'}`}
                 >
                   <CardContent className="p-6">
                     {pkg.popular && (
                       <div className="mb-4">
-                        <Badge className="bg-amber-600 text-white text-xs">Popular</Badge>
+                        <Badge className="bg-black text-white dark:bg-white dark:text-black text-xs">Popular</Badge>
                       </div>
                     )}
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    <h3 className="text-xl font-bold text-black dark:text-white mb-2">
                       {pkg.name}
                     </h3>
                     <div className="mb-4">
-                      <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                      <span className="text-3xl font-bold text-black dark:text-white">
                         {pkg.price}
                       </span>
                     </div>
                     <ul className="space-y-2 mb-6">
                       {pkg.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-2 text-xs text-gray-700 dark:text-gray-300">
-                          <CheckCircle className="h-3 w-3 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="h-3 w-3 text-black dark:text-white flex-shrink-0 mt-0.5" />
                           <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                     <Button
                       onClick={() => setLocation("/contact")}
-                      className={pkg.popular ? "w-full bg-amber-600 hover:bg-amber-700 text-white text-sm" : "w-full text-sm"}
+                      className={pkg.popular ? "w-full bg-black text-white dark:bg-white dark:text-black hover:bg-gray-900 dark:hover:bg-gray-100 text-sm" : "w-full text-sm bg-white text-black border border-black dark:bg-black dark:text-white dark:border-white hover:bg-gray-100 dark:hover:bg-gray-900"}
                       variant={pkg.popular ? "default" : "outline"}
                     >
                       Select
@@ -319,10 +323,10 @@ export default function Services() {
           {/* Social Media Marketing Packages */}
           <div>
             <div className="mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+              <h2 className="text-3xl lg:text-4xl font-bold text-black dark:text-white mb-2">
                 Social Media Marketing
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-700 dark:text-gray-300">
                 Boost your social media presence with expert management
               </p>
             </div>
@@ -361,41 +365,41 @@ export default function Services() {
               ].map((pkg, idx) => (
                 <Card
                   key={idx}
-                  className={`border-2 ${pkg.popular ? 'border-amber-400 bg-amber-50 dark:bg-amber-950/20 dark:border-amber-600' : 'border-gray-200 dark:border-gray-700'}`}
+                  className={`border backdrop-blur-lg transition-all duration-300 ${pkg.popular ? 'border-black/30 dark:border-white/30 bg-black/5 dark:bg-white/5 ring-2 ring-black dark:ring-white' : 'border-black/20 dark:border-white/20 bg-white/30 dark:bg-black/30'}`}
                 >
                   <CardContent className="p-6">
                     {pkg.popular && (
                       <div className="mb-4">
-                        <Badge className="bg-amber-600 text-white text-xs">Popular</Badge>
+                        <Badge className="bg-black text-white dark:bg-white dark:text-black text-xs">Popular</Badge>
                       </div>
                     )}
                     <div className="mb-3">
-                      <Badge variant="outline" className="text-xs">
+                      <Badge variant="outline" className="text-xs border-black/20 dark:border-white/20 text-black dark:text-white">
                         {pkg.platform}
                       </Badge>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    <h3 className="text-xl font-bold text-black dark:text-white mb-2">
                       {pkg.name}
                     </h3>
                     <div className="mb-4">
-                      <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                      <span className="text-3xl font-bold text-black dark:text-white">
                         {pkg.price}
                       </span>
-                      <span className="text-gray-600 dark:text-gray-400 ml-2 text-sm">
+                      <span className="text-gray-700 dark:text-gray-300 ml-2 text-sm">
                         {pkg.period}
                       </span>
                     </div>
                     <ul className="space-y-2 mb-6">
                       {pkg.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-2 text-xs text-gray-700 dark:text-gray-300">
-                          <CheckCircle className="h-3 w-3 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="h-3 w-3 text-black dark:text-white flex-shrink-0 mt-0.5" />
                           <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                     <Button
                       onClick={() => setLocation("/contact")}
-                      className={pkg.popular ? "w-full bg-amber-600 hover:bg-amber-700 text-white text-sm" : "w-full text-sm"}
+                      className={pkg.popular ? "w-full bg-black text-white dark:bg-white dark:text-black hover:bg-gray-900 dark:hover:bg-gray-100 text-sm" : "w-full text-sm bg-white text-black border border-black dark:bg-black dark:text-white dark:border-white hover:bg-gray-100 dark:hover:bg-gray-900"}
                       variant={pkg.popular ? "default" : "outline"}
                     >
                       Learn More
@@ -407,16 +411,18 @@ export default function Services() {
           </div>
         </div>
       </section>
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50">
+
+      {/* Process Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">
+            <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
               How We Work
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
               Our Development Process
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-xl text-gray-700 dark:text-gray-300">
               A transparent, collaborative approach to every project
             </p>
           </div>
@@ -446,18 +452,18 @@ export default function Services() {
             ].map((item, idx) => (
               <div key={idx} className="relative">
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-amber-600 to-amber-500 text-white rounded-full flex items-center justify-center font-bold text-2xl mb-4">
+                  <div className="w-16 h-16 bg-black dark:bg-white text-white dark:text-black rounded-full flex items-center justify-center font-bold text-2xl mb-4">
                     {item.step}
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 dark:text-white text-center mb-2">
+                  <h4 className="text-xl font-bold text-black dark:text-white text-center mb-2">
                     {item.title}
                   </h4>
-                  <p className="text-center text-gray-600 dark:text-gray-400 text-sm">
+                  <p className="text-center text-gray-700 dark:text-gray-300 text-sm">
                     {item.desc}
                   </p>
                 </div>
                 {idx < 3 && (
-                  <div className="hidden md:block absolute top-8 -right-4 w-8 h-1 bg-amber-600 dark:bg-amber-400" />
+                  <div className="hidden md:block absolute top-8 -right-4 w-8 h-1 bg-black dark:bg-white" />
                 )}
               </div>
             ))}
@@ -466,13 +472,13 @@ export default function Services() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
               Why Work With Me
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
               Proven expertise in delivering high-quality solutions that drive real business value
             </p>
           </div>
@@ -512,16 +518,16 @@ export default function Services() {
             ].map((item, idx) => (
               <Card
                 key={idx}
-                className="border border-gray-200 dark:border-gray-700 hover:border-amber-400 dark:hover:border-amber-600 transition-colors"
+                className="border border-black/20 dark:border-white/20 bg-white/30 dark:bg-black/30 backdrop-blur-md hover:border-black/40 dark:hover:border-white/40 transition-colors"
               >
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <CheckCircle className="h-6 w-6 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-6 w-6 text-black dark:text-white flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-bold text-gray-900 dark:text-white mb-2">
+                      <h4 className="font-bold text-black dark:text-white mb-2">
                         {item.title}
                       </h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                      <p className="text-sm text-gray-700 dark:text-gray-300">
                         {item.description}
                       </p>
                     </div>
@@ -534,21 +540,78 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
             Let's discuss how I can help bring your project to life. Get in touch to schedule a consultation.
           </p>
           <Button
             onClick={() => setLocation("/contact")}
-            className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-6 rounded-lg"
+            className="bg-black hover:bg-gray-900 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-black text-lg px-8 py-6 rounded-lg"
           >
             Schedule a Consultation
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-700 dark:text-gray-300">
+              Get answers to common questions about our services
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                q: "How do I choose the right package?",
+                a: "It depends on your business needs and budget. Contact us for a free consultation where we'll recommend the best package for your specific requirements.",
+              },
+              {
+                q: "What is your typical project timeline?",
+                a: "Most projects take 4-8 weeks from start to finish. We'll provide you with a detailed timeline during the discovery phase.",
+              },
+              {
+                q: "Do you offer custom solutions?",
+                a: "Yes! Our listed packages are starting points. We can customize any package to meet your specific needs and budget.",
+              },
+              {
+                q: "Is there a contract for monthly services?",
+                a: "Our monthly services are flexible with no long-term contracts. You can cancel or modify your plan as needed.",
+              },
+              {
+                q: "Do you provide support after setup?",
+                a: "Yes! All our packages include support. Higher-tier packages include more comprehensive support options.",
+              },
+              {
+                q: "Can I upgrade my package later?",
+                a: "Absolutely! You can upgrade or downgrade your package at any time. Changes will be reflected in your next billing cycle.",
+              },
+            ].map((faq, idx) => (
+              <Card
+                key={idx}
+                className="border border-black/20 dark:border-white/20 bg-white/30 dark:bg-black/30 backdrop-blur-md hover:border-black/40 dark:hover:border-white/40 transition-colors"
+              >
+                <CardContent className="p-6">
+                  <h4 className="font-semibold text-black dark:text-white mb-3">
+                    {faq.q}
+                  </h4>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                    {faq.a}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 

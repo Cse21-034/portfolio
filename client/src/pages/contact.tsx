@@ -71,7 +71,7 @@ export default function Contact() {
       {/* Hero */}
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <Badge className="mb-4 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">
+          <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
             Get In Touch
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
@@ -95,8 +95,8 @@ export default function Contact() {
 
               <div className="space-y-6 mb-12">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-white h-6 w-6" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-black to-gray-700 dark:from-white dark:to-gray-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="text-white dark:text-black h-6 w-6" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
@@ -104,7 +104,7 @@ export default function Contact() {
                     </h4>
                     <a
                       href="mailto:leatilemanando@gmail.com"
-                      className="text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                      className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                     >
                       leatilemanando@gmail.com
                     </a>
@@ -112,8 +112,8 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-white h-6 w-6" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-black to-gray-700 dark:from-white dark:to-gray-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="text-white dark:text-black h-6 w-6" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
@@ -121,7 +121,7 @@ export default function Contact() {
                     </h4>
                     <a
                       href="tel:+1234567890"
-                      className="text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                      className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                     >
                       +1 (234) 567-890
                     </a>
@@ -129,8 +129,8 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-white h-6 w-6" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-black to-gray-700 dark:from-white dark:to-gray-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="text-white dark:text-black h-6 w-6" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
@@ -153,7 +153,7 @@ export default function Contact() {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gray-100 dark:bg-gray-800 hover:bg-amber-100 dark:hover:bg-amber-900/30 rounded-lg flex items-center justify-center transition-colors"
+                    className="w-12 h-12 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
                   >
                     <Linkedin className="h-6 w-6 text-gray-700 dark:text-gray-300" />
                   </a>
@@ -161,7 +161,7 @@ export default function Contact() {
                     href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gray-100 dark:bg-gray-800 hover:bg-amber-100 dark:hover:bg-amber-900/30 rounded-lg flex items-center justify-center transition-colors"
+                    className="w-12 h-12 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
                   >
                     <Github className="h-6 w-6 text-gray-700 dark:text-gray-300" />
                   </a>
@@ -170,7 +170,7 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <Card className="border-2 border-amber-200 dark:border-amber-800">
+            <Card className="border border-black/20 dark:border-white/20 backdrop-blur-md">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">Send us a Message</CardTitle>
               </CardHeader>
@@ -258,7 +258,7 @@ export default function Contact() {
                   <Button
                     type="submit"
                     disabled={contactMutation.isPending}
-                    className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-6"
+                    className="w-full bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black font-semibold py-6"
                   >
                     <Send className="mr-2 h-5 w-5" />
                     {contactMutation.isPending ? "Sending..." : "Send Message"}
@@ -271,12 +271,12 @@ export default function Contact() {
       </section>
 
       {/* Quick Response CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-amber-600 to-amber-700 dark:from-amber-900 dark:to-amber-950">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black dark:bg-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Response within 24 Hours
           </h2>
-          <p className="text-amber-100 text-lg mb-8">
+          <p className="text-gray-100 text-lg mb-8">
             We're committed to responding to all inquiries promptly. Your project deserves our attention.
           </p>
         </div>

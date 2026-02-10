@@ -53,11 +53,11 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <Badge className="mb-4 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">
+              <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
                 Enterprise Solutions
               </Badge>
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Premium Web Solutions for <span className="text-amber-600 dark:text-amber-400">Ambitious</span> Ventures
+              <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
+                Premium Web Solutions for <span className="text-black dark:text-white">Ambitious</span> Ventures
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                 Transform your vision into reality with world-class web development and digital strategy designed for investors, enterprises, and visionary leaders.
@@ -71,7 +71,7 @@ export default function Home() {
                   "Data-driven solutions that drive business growth",
                 ].map((feature, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="h-6 w-6 text-black dark:text-white flex-shrink-0 mt-0.5" />
                     <span className="text-lg text-gray-700 dark:text-gray-300">{feature}</span>
                   </div>
                 ))}
@@ -81,7 +81,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   onClick={() => setLocation("/services")}
-                  className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-6 rounded-lg"
+                  className="bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black text-lg px-8 py-6 rounded-lg"
                 >
                   Explore Services
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -89,7 +89,7 @@ export default function Home() {
                 <Button
                   onClick={() => setLocation("/contact")}
                   variant="outline"
-                  className="text-lg px-8 py-6 rounded-lg border-2 border-amber-600 text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/30"
+                  className="text-lg px-8 py-6 rounded-lg border-2 border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-900"
                 >
                   Schedule Consultation
                 </Button>
@@ -98,20 +98,20 @@ export default function Home() {
 
             {/* Right Visual */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-amber-600/20 rounded-2xl blur-3xl" />
-              <div className="relative bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-950/40 dark:to-amber-900/40 rounded-2xl p-8 border border-amber-200 dark:border-amber-800">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/10 dark:from-white/10 dark:to-white/10 rounded-2xl blur-3xl" />
+              <div className="relative bg-gradient-to-br from-white/30 to-white/20 dark:from-black/30 dark:to-black/20 rounded-2xl p-8 border border-black/20 dark:border-white/20 backdrop-blur-lg">
                 <div className="space-y-6">
                   {[
                     { number: "50+", label: "Successful Projects" },
                     { number: "100+", label: "Satisfied Clients" },
                     { number: "15+", label: "Years Experience" },
                   ].map((stat, i) => (
-                    <div key={i} className="flex items-center justify-between p-4 bg-white/60 dark:bg-gray-800/60 rounded-lg">
+                    <div key={i} className="flex items-center justify-between p-4 bg-white/40 dark:bg-gray-900/40 rounded-lg backdrop-blur-sm">
                       <div>
-                        <div className="text-3xl font-bold text-amber-600 dark:text-amber-400">{stat.number}</div>
-                        <div className="text-gray-600 dark:text-gray-400">{stat.label}</div>
+                        <div className="text-3xl font-bold text-black dark:text-white">{stat.number}</div>
+                        <div className="text-gray-700 dark:text-gray-300">{stat.label}</div>
                       </div>
-                      <TrendingUp className="h-8 w-8 text-amber-600 dark:text-amber-400" />
+                      <TrendingUp className="h-8 w-8 text-black dark:text-white" />
                     </div>
                   ))}
                 </div>
@@ -125,10 +125,10 @@ export default function Home() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800/50 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">
+            <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
               What We Offer
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
               Comprehensive Services
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -151,12 +151,12 @@ export default function Home() {
                 description: "Strategic guidance from industry veterans and thought leaders",
               },
             ].map((service, i) => (
-              <Card key={i} className="border-2 border-amber-200 dark:border-amber-800 hover:border-amber-400 dark:hover:border-amber-600 transition-all">
+              <Card key={i} className="border border-black/20 dark:border-white/20 bg-white/30 dark:bg-black/30 hover:border-black/40 dark:hover:border-white/40 backdrop-blur-md transition-all">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                  <h3 className="text-xl font-bold text-black dark:text-white mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">{service.description}</p>
+                  <p className="text-gray-700 dark:text-gray-300">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -165,7 +165,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Button
               onClick={() => setLocation("/services")}
-              className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-6 rounded-lg"
+              className="bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black text-lg px-8 py-6 rounded-lg"
             >
               View All Services
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -177,11 +177,11 @@ export default function Home() {
       {/* Newsletter Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <div className="bg-gradient-to-r from-amber-600 to-amber-700 dark:from-amber-900 dark:to-amber-950 rounded-2xl p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <div className="bg-gradient-to-r from-black to-gray-900 dark:from-white dark:to-gray-200 rounded-2xl p-12 text-center backdrop-blur-lg border border-black/20 dark:border-white/20">
+            <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-black mb-4">
               Stay Updated with Industry Insights
             </h2>
-            <p className="text-amber-100 mb-8 text-lg">
+            <p className="text-gray-200 dark:text-gray-700 mb-8 text-lg">
               Get exclusive tips, trends, and opportunities delivered to your inbox
             </p>
             <form onSubmit={handleNewsletterSubmit} className="flex gap-2 max-w-md mx-auto">
@@ -190,13 +190,13 @@ export default function Home() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="rounded-lg flex-1"
+                className="rounded-lg flex-1 bg-white dark:bg-black text-black dark:text-white border-black/20 dark:border-white/20"
                 required
               />
               <Button
                 type="submit"
                 disabled={newsletterMutation.isPending}
-                className="bg-white text-amber-600 hover:bg-gray-100 font-semibold px-6 rounded-lg"
+                className="bg-white dark:bg-black text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-900 font-semibold px-6 rounded-lg"
               >
                 {newsletterMutation.isPending ? "Subscribing..." : "Subscribe"}
               </Button>
