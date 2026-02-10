@@ -17,13 +17,13 @@ export default function About() {
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
-            About Us
+            About Me
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-4">
-            Crafting Excellence in Digital Solutions
+            Leatile Mosimanyana
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A team of passionate engineers and strategists dedicated to transforming businesses through technology
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+            Full-Stack Web Developer | Digital Solution Architect | Freelance Consultant
           </p>
         </div>
       </section>
@@ -34,16 +34,16 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold text-black dark:text-white mb-6">
-                Our Story
+                My Journey
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                Founded with a mission to bridge the gap between visionary ideas and technical excellence, we've been at the forefront of digital innovation for over a decade.
+                I'm a passionate full-stack web developer with 5+ years of professional experience building scalable, high-performance web applications. My journey started with a love for problem-solving and creating elegant digital solutions.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                What started as a small team of passionate developers has evolved into a full-service digital agency trusted by Fortune 500 companies, ambitious startups, and innovative entrepreneurs alike.
+                Throughout my career, I've worked on diverse projects ranging from enterprise applications to innovative startups, helping businesses transform their ideas into reality through technology.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                We believe that technology should empower businesses, not complicate them. Every solution we build is crafted with precision, integrity, and a deep understanding of our clients' unique challenges.
+                I'm committed to writing clean, maintainable code and delivering solutions that not only meet technical requirements but also drive real business value. Every project is an opportunity to learn and grow.
               </p>
             </div>
             <div className="relative">
@@ -51,10 +51,10 @@ export default function About() {
               <div className="relative bg-gradient-to-br from-white/30 to-white/20 dark:from-black/30 dark:to-black/20 rounded-2xl p-8 border border-black/20 dark:border-white/20 backdrop-blur-lg">
                 <div className="space-y-6">
                   {[
-                    { icon: <Award className="h-6 w-6" />, text: "Industry-Leading Expertise" },
-                    { icon: <Code className="h-6 w-6" />, text: "Cutting-Edge Technology" },
-                    { icon: <Briefcase className="h-6 w-6" />, text: "Enterprise Scale" },
-                    { icon: <Heart className="h-6 w-6" />, text: "Client-Centric Approach" },
+                  { icon: <Code className="h-6 w-6" />, text: "Full-Stack Development" },
+                    { icon: <Award className="h-6 w-6" />, text: "5+ Years Experience" },
+                    { icon: <Briefcase className="h-6 w-6" />, text: "Enterprise & Startup Focus" },
+                    { icon: <Heart className="h-6 w-6" />, text: "Client Success Driven" },
                   ].map((item, i) => (
                     <div
                       key={i}
@@ -78,30 +78,30 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
-              Our Core Values
+              What Drives Me
             </h2>
             <p className="text-xl text-gray-700 dark:text-gray-300">
-              Guiding principles that define who we are
+              My core values and approach to every project
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                title: "Excellence",
-                description: "We set the highest standards and continuously push boundaries",
-              },
-              {
-                title: "Integrity",
-                description: "Honesty, transparency, and ethical practices in everything",
+                title: "Quality Code",
+                description: "I write clean, maintainable, and well-tested code that stands the test of time",
               },
               {
                 title: "Innovation",
-                description: "Embracing new technologies and creative problem-solving",
+                description: "Constantly exploring new technologies and best practices to deliver modern solutions",
               },
               {
-                title: "Partnership",
-                description: "True collaboration with clients as extensions of our team",
+                title: "Collaboration",
+                description: "I work closely with clients and teams to understand needs and exceed expectations",
+              },
+              {
+                title: "Results-Driven",
+                description: "Every solution is focused on delivering measurable business value and ROI",
               },
             ].map((value, i) => (
               <Card
@@ -125,13 +125,13 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
-              Leadership Team
+              Experience
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
-              Meet The Experts
+              About My Experience
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              Experienced professionals dedicated to your success
+            <p className="text-xl text-gray-700 dark:text-gray-300">
+              Professional background and expertise
             </p>
           </div>
 
@@ -139,18 +139,18 @@ export default function About() {
             {[
               {
                 name: "Leatile Mosimanyana",
-                role: "Founder & Chief Architect",
-                bio: "Visionary leader with 15+ years in enterprise software development",
+                role: "Full-Stack Developer",
+                bio: "Specializing in React, Node.js, TypeScript, and modern web technologies. 5+ years building scalable applications.",
               },
               {
-                name: "Industry Expert",
-                role: "Head of Strategy",
-                bio: "Strategic advisor helping companies navigate digital transformation",
+                name: "Web Development",
+                role: "Core Expertise",
+                bio: "React, Next.js, Vue.js, Node.js, Express, PostgreSQL, MongoDB, AWS, Docker, and more.",
               },
               {
-                name: "Tech Lead",
-                role: "VP Engineering",
-                bio: "Leading our technical team in building scalable solutions",
+                name: "Digital Solutions",
+                role: "Freelance Services",
+                bio: "Custom web development, consulting, UI/UX design, and digital strategy for businesses of all sizes.",
               },
             ].map((member, i) => (
               <Card
@@ -178,10 +178,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { number: "15+", label: "Years in Business" },
-              { number: "100+", label: "Team Members" },
-              { number: "500+", label: "Projects Completed" },
-              { number: "50+", label: "Awards Won" },
+              { number: "5+", label: "Years Experience" },
+              { number: "50+", label: "Projects Completed" },
+              { number: "30+", label: "Happy Clients" },
+              { number: "100%", label: "Client Satisfaction" },
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-5xl font-bold text-black dark:text-white mb-2">
@@ -198,10 +198,10 @@ export default function About() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
-            Ready to Partner With Us?
+            Ready to Collaborate?
           </h2>
           <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
-            Let's discuss how we can help achieve your business goals
+            Whether you need a freelance developer, digital consultant, or want to discuss your next project, I'd love to connect with you.
           </p>
           <Button
             onClick={() => setLocation("/contact")}

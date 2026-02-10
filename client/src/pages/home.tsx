@@ -54,21 +54,21 @@ export default function Home() {
             {/* Left Content */}
             <div>
               <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
-                Enterprise Solutions
+                Freelance Developer & Web Solutions Expert
               </Badge>
               <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
-                Premium Web Solutions for <span className="text-black dark:text-white">Ambitious</span> Ventures
+                Hey, I'm <span className="text-black dark:text-white">Leatile</span> Mosimanyana
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                Transform your vision into reality with world-class web development and digital strategy designed for investors, enterprises, and visionary leaders.
+              <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+                Full-stack web developer specializing in creating scalable, high-performance digital solutions. I help businesses, startups, and entrepreneurs bring their vision to life through modern web development, strategic consulting, and innovative design.
               </p>
 
               {/* Key Features */}
               <div className="space-y-4 mb-8">
                 {[
-                  "Award-winning development team with proven track record",
-                  "Enterprise-grade security and scalability",
-                  "Data-driven solutions that drive business growth",
+                  "5+ years of professional web development experience",
+                  "Custom solutions tailored to your business needs",
+                  "Expertise in React, Node.js, TypeScript, and modern tech stack",
                 ].map((feature, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-black dark:text-white flex-shrink-0 mt-0.5" />
@@ -126,13 +126,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
-              What We Offer
+              Services I Provide
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
-              Comprehensive Services
+              What I Can Do For You
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              From concept to launch, we deliver complete solutions
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+              Complete digital solutions from concept to deployment
             </p>
           </div>
 
@@ -140,15 +140,15 @@ export default function Home() {
             {[
               {
                 title: "Web Development",
-                description: "Custom websites and applications built with cutting-edge technology",
+                description: "Custom websites, web applications, and SaaS platforms built with React, Node.js, and modern frameworks",
               },
               {
-                title: "Enterprise Security",
-                description: "Bank-level security for your digital assets and customer data",
+                title: "UI/UX Design",
+                description: "Beautiful, user-centered design that enhances engagement and drives conversions",
               },
               {
-                title: "Consulting",
-                description: "Strategic guidance from industry veterans and thought leaders",
+                title: "Digital Consulting",
+                description: "Strategic guidance on technology choices, architecture, and digital transformation for your business",
               },
             ].map((service, i) => (
               <Card key={i} className="border border-black/20 dark:border-white/20 bg-white/30 dark:bg-black/30 hover:border-black/40 dark:hover:border-white/40 backdrop-blur-md transition-all">
@@ -179,10 +179,10 @@ export default function Home() {
         <div className="max-w-3xl mx-auto">
           <div className="bg-gradient-to-r from-black to-gray-900 dark:from-white dark:to-gray-200 rounded-2xl p-12 text-center backdrop-blur-lg border border-black/20 dark:border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-black mb-4">
-              Stay Updated with Industry Insights
+              Let's Work Together
             </h2>
             <p className="text-gray-200 dark:text-gray-700 mb-8 text-lg">
-              Get exclusive tips, trends, and opportunities delivered to your inbox
+              Subscribe to get updates on new projects, services, and industry insights
             </p>
             <form onSubmit={handleNewsletterSubmit} className="flex gap-2 max-w-md mx-auto">
               <Input

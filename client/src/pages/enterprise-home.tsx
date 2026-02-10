@@ -53,13 +53,13 @@ export default function EnterpriseHome() {
             {/* Left Content */}
             <div>
               <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
-                Enterprise Solutions
+                Freelance Web Developer
               </Badge>
               <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
-                Premium Web Solutions for <span className="text-black dark:text-white">Ambitious</span> Ventures
+                Hi, I'm <span className="text-black dark:text-white">Leatile</span> Mosimanyana
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                Transform your vision into reality with world-class web development and digital strategy designed for investors, enterprises, and visionary leaders.
+              <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+                A full-stack web developer offering comprehensive digital solutions. I create custom websites, web applications, and digital strategies that help businesses scale and succeed in the digital landscape.
               </p>
 
               {/* Key Features */}
@@ -125,13 +125,13 @@ export default function EnterpriseHome() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-black/10 dark:bg-white/10 text-black dark:text-white border border-black/20 dark:border-white/20 backdrop-blur-md">
-              What We Offer
+              My Services
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Comprehensive Services
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+              What I Offer
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              From concept to launch, we deliver complete solutions
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+              Professional freelance services tailored to your project needs
             </p>
           </div>
 
@@ -140,17 +140,17 @@ export default function EnterpriseHome() {
               {
                 icon: <Code className="h-8 w-8" />,
                 title: "Web Development",
-                description: "Custom websites and applications built with cutting-edge technology",
+                description: "Custom websites, web apps, and SaaS platforms built with React, Node.js, and modern frameworks",
               },
               {
                 icon: <Shield className="h-8 w-8" />,
-                title: "Enterprise Security",
-                description: "Bank-level security for your digital assets and customer data",
+                title: "Full-Stack Solutions",
+                description: "End-to-end development from frontend UI to backend infrastructure and deployment",
               },
               {
                 icon: <Users className="h-8 w-8" />,
-                title: "Consulting",
-                description: "Strategic guidance from industry veterans and thought leaders",
+                title: "Digital Consulting",
+                description: "Strategic advice on technology choices, architecture, and business growth through digital solutions",
               },
             ].map((service, i) => (
               <Card key={i} className="border border-black/20 dark:border-white/20 bg-white/30 dark:bg-black/30 backdrop-blur-md hover:border-black/40 dark:hover:border-white/40 transition-all">
