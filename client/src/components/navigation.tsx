@@ -7,7 +7,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, Sun, Moon, ChevronDown, Github, BookOpen, Trophy, Clock, Star } from "lucide-react";
+import { Menu, Sun, Moon, ChevronDown, Github, Star } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import { useTheme } from "./theme-provider";
 import { LanguageSwitcher } from "./language-switcher";
 import { useLanguage } from "./language-context";
@@ -17,16 +18,7 @@ const navItems = [
   { href: "#projects", labelKey: "nav.projects" },
   { href: "#awards", labelKey: "Awards" },
   { href: "#about", labelKey: "nav.about" },
-  { href: "#services", labelKey: "nav.services" },
   { href: "#contact", labelKey: "nav.contact" },
-];
-
-const moreItems = [
-  { href: "#skills", labelKey: "nav.skills", icon: Star },
-  { href: "#timeline", labelKey: "nav.journey", icon: Clock },
-  { href: "#github", labelKey: "GitHub Stats", icon: Github },
-  { href: "#testimonials", labelKey: "nav.testimonials", icon: Star },
-  { href: "#blog", labelKey: "nav.blog", icon: BookOpen },
 ];
 
 export function Navigation() {
@@ -41,7 +33,7 @@ export function Navigation() {
       setIsScrolled(window.scrollY > 10);
       
       // Update active section based on scroll position
-      const allSections = [...navItems, ...moreItems].map(item => item.href.slice(1));
+      const allSections = navItems.map(item => item.href.slice(1));
       const currentSection = allSections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -111,47 +103,30 @@ export function Navigation() {
                 )}
               </button>
             ))}
-
-            {/* More Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button
-                  className={`relative px-3.5 py-2 text-sm font-medium transition-all duration-200 rounded-md flex items-center gap-1.5 ${
-                    isMoreActive
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30"
-                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/30"
-                  }`}
-                >
-                  More
-                  <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200" />
-                  {isMoreActive && (
-                    <span className="absolute bottom-1 left-3 right-3 h-1 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full" />
-                  )}
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-52 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-lg">
-                {moreItems.map((item) => (
-                  <DropdownMenuItem
-                    key={item.href}
-                    onClick={() => scrollToSection(item.href)}
-                    className={`cursor-pointer text-sm py-2.5 px-3 transition-colors duration-150 ${
-                      activeSection === item.href.slice(1)
-                        ? "bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400"
-                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                    }`}
-                  >
-                    <item.icon className="w-4 h-4 mr-2.5" />
-                    {typeof item.labelKey === 'string' && item.labelKey.includes('.') 
-                      ? t(item.labelKey) 
-                      : item.labelKey}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
           </div>
           
           {/* Right Side Actions */}
           <div className="flex items-center gap-1.5 ml-auto">
+            {/* WhatsApp Icon */}
+            <a
+              href="https://wa.me/26772212372"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center justify-center w-10 h-10 rounded-md hover:bg-green-100 dark:hover:bg-green-900/30 text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+            >
+              <SiWhatsapp className="h-4 w-4" />
+            </a>
+
+            {/* GitHub Icon */}
+            <a
+              href="https://github.com/Cse21-034"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors duration-200"
+            >
+              <Github className="h-4 w-4" />
+            </a>
+
             {/* Language Switcher */}
             <div className="hidden sm:block">
               <LanguageSwitcher />
@@ -211,27 +186,6 @@ export function Navigation() {
                         {t(item.labelKey)}
                       </button>
                     ))}
-
-                    {/* More Section in Mobile */}
-                    <div className="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700">
-                      <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 px-4 mb-2.5 uppercase tracking-wider">More</p>
-                      {moreItems.map((item) => (
-                        <button
-                          key={item.href}
-                          onClick={() => scrollToSection(item.href)}
-                          className={`w-full text-left px-4 py-3 rounded-md transition-all duration-200 flex items-center gap-2.5 ${
-                            activeSection === item.href.slice(1)
-                              ? "bg-blue-50 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 font-medium"
-                              : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
-                          }`}
-                        >
-                          <item.icon className="w-4 h-4 flex-shrink-0" />
-                          {typeof item.labelKey === 'string' && item.labelKey.includes('.') 
-                            ? t(item.labelKey) 
-                            : item.labelKey}
-                        </button>
-                      ))}
-                    </div>
                   </nav>
 
                   {/* Mobile Footer Actions */}
