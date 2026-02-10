@@ -32,7 +32,7 @@ const projects = [
     title: "Real-time Collaboration Tool",
     description: "Team collaboration platform with real-time updates and version control",
     tags: ["Vue.js", "WebSocket", "Redis", "Docker"],
-    image: "bg-gradient-to-br from-orange-500 to-amber-400",
+    image: "bg-gradient-to-br from-orange-500 to-yellow-400",
     stats: { teams: "500+", saved: "1000h/mo" },
   },
   {
