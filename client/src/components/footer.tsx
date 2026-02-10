@@ -1,4 +1,5 @@
 import { Mail, Github, Linkedin, ArrowUp } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -31,6 +32,14 @@ export function Footer() {
               className="text-gray-400 hover:text-white transition-colors"
             >
               <Linkedin className="h-5 w-5" />
+            </a>
+            <a
+              href="https://wa.me/26772212372"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-green-400 transition-colors"
+            >
+              <SiWhatsapp className="h-5 w-5" />
             </a>
             <a
               href="mailto:leatilemanando@gmail.com"

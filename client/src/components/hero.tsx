@@ -108,10 +108,12 @@ export function Hero() {
                   <Linkedin className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-blue-600" />
                 </a>
                 <a
-                  href="mailto:leatilemanando@gmail.com"
+                  href="https://wa.me/26772212372"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
                 >
-                  <Mail className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-green-600" />
+                  <svg className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.084-5.02 5.28-5.02 8.978 0 1.36.266 2.685.75 3.935L1.07 23.5l4.28-.859c1.123.627 2.389.954 3.65.954 5.487 0 9.86-4.359 9.86-9.781 0-2.6-.997-5.058-2.79-6.901-1.794-1.843-4.165-2.86-6.708-2.86m8.081-8.816c-4.761 4.76-12.492 4.76-17.252 0-4.761-4.761-4.761-12.492 0-17.253 4.761-4.761 12.491-4.761 17.252 0 4.76 4.761 4.76 12.492 0 17.253Z"/></svg>\n                </a>\n                <a\n                  href=\"mailto:leatilemanando@gmail.com\"\n                  className=\"group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110\"\n                >\n                  <Mail className=\"h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-green-600\" />
                 </a>
                 <a
                   href="https://portfolio-git-main-leatiles-projects.vercel.app/"

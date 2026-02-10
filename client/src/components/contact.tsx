@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { Mail, MapPin, Send } from "lucide-react";
-import { SiLinkedin } from "react-icons/si";
+import { SiLinkedin, SiWhatsapp } from "react-icons/si";
 import { useLanguage } from "@/components/language-context";
 
 interface ContactFormData {
@@ -107,6 +107,25 @@ export function Contact() {
                   <p className="text-gray-600 dark:text-gray-300">
                     Molepolole, Botswana
                   </p>
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-green-600 dark:bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                  <SiWhatsapp className="text-white h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">
+                    WhatsApp
+                  </h4>
+                  <a
+                    href="https://wa.me/26772212372"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                  >
+                    +267 72 212 372
+                  </a>
                 </div>
               </div>
 

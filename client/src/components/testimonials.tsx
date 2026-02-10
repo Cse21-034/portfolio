@@ -53,17 +53,6 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 4,
-    name: "Keabetswe Moagi",
-    role: "Peer Developer",
-    company: "Botho University",
-    avatar: "https://ui-avatars.com/api/?name=Keabetswe+Moagi&background=8b5cf6&color=fff",
-    rating: 5,
-    text: "Collaborated with Leatile on several group projects. His expertise in both frontend and backend development was invaluable. He's always willing to help teammates and shares knowledge freely. A true team player!",
-    project: "Group Projects Collaboration",
-    date: "June 2024",
-  },
-  {
-    id: 5,
     name: "John Smith",
     role: "Entrepreneur",
     company: "Tech Startup",
@@ -72,17 +61,6 @@ const testimonials: Testimonial[] = [
     text: "Leatile built our e-commerce platform from scratch. The authentication system, shopping cart, and admin dashboard all work perfectly. Despite being a recent graduate, his code quality and architectural decisions were professional-grade.",
     project: "E-Commerce Platform",
     date: "July 2024",
-  },
-  {
-    id: 6,
-    name: "Lesego Tsheko",
-    role: "Cybersecurity Student",
-    company: "Botho University",
-    avatar: "https://ui-avatars.com/api/?name=Lesego+Tsheko&background=06b6d4&color=fff",
-    rating: 5,
-    text: "Leatile mentored me in cybersecurity concepts and helped me understand penetration testing. His network security monitor project inspired me to pursue security research. Great mentor and skilled professional!",
-    project: "Mentorship & Security Projects",
-    date: "May 2024",
   },
 ];
 

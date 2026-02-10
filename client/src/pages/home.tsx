@@ -11,7 +11,6 @@ import { Testimonials } from "@/components/testimonials";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { Chatbot } from "@/components/chatbot";
-import { Services } from "@/components/services";
 
 export default function Home() {
   return (
@@ -22,7 +21,6 @@ export default function Home() {
       <Projects />
       <Awards />
     {/* <Timeline />*/}
-       <Services />
       {/* <Skills />*/}
       
      {/*  <GitHubStats />*/}
