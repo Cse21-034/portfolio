@@ -18,6 +18,7 @@ const navItems = [
   { href: "/services", labelKey: "nav.services" },
   { href: "/portfolio", labelKey: "nav.projects" },
   { href: "/about", labelKey: "nav.about" },
+  { href: "/awards", labelKey: "nav.awards" },
   { href: "/contact", labelKey: "nav.contact" },
 ];
 
