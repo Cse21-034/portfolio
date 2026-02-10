@@ -73,22 +73,6 @@ export function About() {
                 </CardContent>
               </Card>
             </div>
-
-            {/* Achievement Stats */}
-            <div className="mt-8 grid grid-cols-3 gap-4">
-              <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">13+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">{t("hero.projects")}</div>
-              </div>
-              <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <div className="text-2xl font-bold text-green-600 dark:text-green-400">15+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">{t("hero.technologies")}</div>
-              </div>
-              <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">3+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">{t("hero.experience")}</div>
-              </div>
-            </div>
           </div>
         </div>
 
