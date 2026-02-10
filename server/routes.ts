@@ -5,7 +5,8 @@ import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend only if API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 const newsletterSchema = z.object({
   email: z.string().email(),
@@ -18,37 +19,39 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertContactSchema.parse(req.body);
       const contact = await storage.createContact(validatedData);
 
-      // Send email notification using Resend
-      try {
-        await resend.emails.send({
-          from: "Contact Form <onboarding@resend.dev>",
-          to: "leatilemanando@gmail.com",
-          subject: `New Contact: ${validatedData.subject}`,
-          html: `
-            <h2>New Contact Submission</h2>
-            <p><strong>Name:</strong> ${validatedData.name}</p>
-            <p><strong>Email:</strong> ${validatedData.email}</p>
-            <p><strong>Subject:</strong> ${validatedData.subject}</p>
-            <p><strong>Message:</strong></p>
-            <p>${validatedData.message.replace(/\n/g, "<br>")}</p>
-          `,
-        });
+      // Send email notification using Resend (if API key is configured)
+      if (resend) {
+        try {
+          await resend.emails.send({
+            from: "Contact Form <onboarding@resend.dev>",
+            to: "leatilemanando@gmail.com",
+            subject: `New Contact: ${validatedData.subject}`,
+            html: `
+              <h2>New Contact Submission</h2>
+              <p><strong>Name:</strong> ${validatedData.name}</p>
+              <p><strong>Email:</strong> ${validatedData.email}</p>
+              <p><strong>Subject:</strong> ${validatedData.subject}</p>
+              <p><strong>Message:</strong></p>
+              <p>${validatedData.message.replace(/\n/g, "<br>")}</p>
+            `,
+          });
 
-        // Send confirmation email to user
-        await resend.emails.send({
-          from: "Leatile Mosimanyana <onboarding@resend.dev>",
-          to: validatedData.email,
-          subject: "We received your message",
-          html: `
-            <h2>Thank you for reaching out!</h2>
-            <p>Hi ${validatedData.name},</p>
-            <p>We've received your message and will get back to you within 24 hours.</p>
-            <p>Best regards,<br>Leatile Mosimanyana</p>
-          `,
-        });
-      } catch (emailError) {
-        console.error("Email sending failed:", emailError);
-        // Continue even if email fails
+          // Send confirmation email to user
+          await resend.emails.send({
+            from: "Leatile Mosimanyana <onboarding@resend.dev>",
+            to: validatedData.email,
+            subject: "We received your message",
+            html: `
+              <h2>Thank you for reaching out!</h2>
+              <p>Hi ${validatedData.name},</p>
+              <p>We've received your message and will get back to you within 24 hours.</p>
+              <p>Best regards,<br>Leatile Mosimanyana</p>
+            `,
+          });
+        } catch (emailError) {
+          console.error("Email sending failed:", emailError);
+          // Continue even if email fails
+        }
       }
 
       res.json({ success: true, message: "Message sent successfully!", id: contact.id });
@@ -73,21 +76,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = newsletterSchema.parse(req.body);
 
-      // Send welcome email using Resend
-      try {
-        await resend.emails.send({
-          from: "Newsletter <onboarding@resend.dev>",
-          to: validatedData.email,
-          subject: "Welcome to our newsletter!",
-          html: `
-            <h2>Welcome!</h2>
-            <p>Thank you for subscribing to our newsletter.</p>
-            <p>You'll now receive exclusive insights, industry trends, and opportunities delivered to your inbox.</p>
-            <p>Best regards,<br>Leatile Mosimanyana</p>
-          `,
-        });
-      } catch (emailError) {
-        console.error("Welcome email failed:", emailError);
+      // Send welcome email using Resend (if API key is configured)
+      if (resend) {
+        try {
+          await resend.emails.send({
+            from: "Newsletter <onboarding@resend.dev>",
+            to: validatedData.email,
+            subject: "Welcome to our newsletter!",
+            html: `
+              <h2>Welcome!</h2>
+              <p>Thank you for subscribing to our newsletter.</p>
+              <p>You'll now receive exclusive insights, industry trends, and opportunities delivered to your inbox.</p>
+              <p>Best regards,<br>Leatile Mosimanyana</p>
+            `,
+          });
+        } catch (emailError) {
+          console.error("Welcome email failed:", emailError);
+        }
       }
 
       res.json({
