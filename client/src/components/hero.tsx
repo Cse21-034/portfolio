@@ -108,7 +108,6 @@ export function Hero() {
             >
               {/* Main image container */}
               <div className="relative w-80 h-96 lg:w-96 lg:h-[500px]">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 to-purple-100/30 dark:from-slate-700/30 dark:to-slate-600/30 rounded-3xl transform rotate-3" />
                 <img 
                   src="https://iili.io/FndI3IS.png" 
                   alt="Leatile Mosimanyana" 
@@ -123,8 +122,8 @@ export function Hero() {
                 }`}
                 style={{ animationDelay: "0.1s" }}
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
-                  <Award className="w-7 h-7 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center text-2xl">
+                  🏆
                 </div>
                 <div>
                   <div className="text-sm font-bold text-slate-900 dark:text-white">Best Design</div>
@@ -157,24 +156,9 @@ export function Hero() {
                 style={{ animationDelay: "0.3s" }}
               >
                 <div className="text-center">
-                  <div className="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl mx-auto mb-2 flex items-center justify-center">
-                    <Database className="w-7 h-7 text-white" />
-                  </div>
+                  <div className="text-4xl mb-1">🛍️</div>
                   <div className="text-xs font-bold text-slate-900 dark:text-white">shopify</div>
                 </div>
-              </div>
-
-              {/* Tech stack icons (orbiting) */}
-              <div className={`absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-xl transition-all duration-700 ${
-                isHovered ? 'scale-110 rotate-12' : 'opacity-90'
-              }`}>
-                <Code className="w-6 h-6 text-white" />
-              </div>
-              
-              <div className={`absolute bottom-20 left-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl transition-all duration-700 ${
-                isHovered ? 'scale-110 -rotate-12' : 'opacity-90'
-              }`}>
-                <Shield className="w-6 h-6 text-white" />
               </div>
             </div>
           </div>
