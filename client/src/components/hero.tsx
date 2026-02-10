@@ -15,11 +15,6 @@ import {
   Cpu,
   Terminal,
   Server,
-  ChevronRight,
-  Briefcase,
-  CheckCircle,
-  Users,
-  Clock,
 } from "lucide-react";
 import { useLanguage } from "@/components/language-context";
 
@@ -34,261 +29,242 @@ export function Hero() {
     }
   };
 
-  const techIcons = [
-    { Icon: Code, label: "Full Stack", color: "bg-blue-600", position: "top-0 left-1/2 -translate-x-1/2 -translate-y-10", delay: "0s" },
-    { Icon: Database, label: "Database", color: "bg-emerald-600", position: "top-12 -right-12", delay: "0.1s" },
-    { Icon: Shield, label: "Security", color: "bg-amber-600", position: "top-1/2 -right-16 -translate-y-1/2", delay: "0.2s" },
-    { Icon: Globe, label: "Web Dev", color: "bg-indigo-600", position: "bottom-12 -right-12", delay: "0.3s" },
-    { Icon: Smartphone, label: "Mobile", color: "bg-purple-600", position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-10", delay: "0.4s" },
-    { Icon: Server, label: "Backend", color: "bg-cyan-600", position: "bottom-12 -left-12", delay: "0.5s" },
-    { Icon: Terminal, label: "DevOps", color: "bg-violet-600", position: "top-1/2 -left-16 -translate-y-1/2", delay: "0.6s" },
-    { Icon: Cpu, label: "AI/ML", color: "bg-rose-600", position: "top-12 -left-12", delay: "0.7s" },
-  ];
-
-  const trustIndicators = [
-    { icon: CheckCircle, text: "Enterprise-Grade Solutions" },
-    { icon: Users, text: "Client-Focused Approach" },
-    { icon: Clock, text: "Timely Delivery" },
-    { icon: Briefcase, text: "Professional Experience" },
-  ];
-
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-slate-100 
-        dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 relative overflow-hidden pt-16"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-50 via-orange-50/40 to-purple-50/30 
+        dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden pt-16"
     >
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.03)_0%,transparent_70%)]" />
-      
-      {/* Professional grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.02)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
-
-      {/* Accent lines */}
-      <div className="absolute top-1/4 left-0 w-48 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
-      <div className="absolute bottom-1/4 right-0 w-48 h-px bg-gradient-to-l from-transparent via-purple-500/30 to-transparent" />
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-3 h-3 bg-orange-400 rounded-full animate-pulse" />
+        <div className="absolute top-40 right-32 w-3 h-3 bg-rose-400 rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
+        <div className="absolute bottom-32 left-20 w-3 h-3 bg-emerald-400 rounded-full animate-pulse" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-60 right-20 w-3 h-3 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }} />
+        
+        {/* Large decorative blobs */}
+        <div className="absolute top-1/4 -left-20 w-72 h-72 bg-gradient-to-br from-orange-200/20 to-rose-200/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-gradient-to-br from-purple-200/20 to-blue-200/20 rounded-full blur-3xl" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Main Content */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left column - Text content */}
           <div className="space-y-8">
-            {/* Professional tag */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 rounded-full border border-blue-100 dark:border-blue-800/30">
-              <Briefcase className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-              <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
-                Senior Software Engineer & Security Specialist
-              </span>
+            {/* Greeting with emoji */}
+            <div className="inline-flex items-center gap-3 bg-white/80 dark:bg-slate-800/80 px-6 py-3 rounded-full shadow-lg backdrop-blur-sm border border-orange-100 dark:border-slate-700">
+              <div className="relative">
+                <span className="text-4xl">👋</span>
+                <div className="absolute -top-2 -right-1 w-8 h-8 bg-gradient-to-br from-red-400 to-red-500 rounded-full flex items-center justify-center transform rotate-12">
+                  <span className="text-white text-xs font-bold">🎅</span>
+                </div>
+              </div>
+              <span className="text-slate-700 dark:text-slate-300 font-medium">Hi! I Am</span>
             </div>
 
-            {/* Headline */}
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                <span className="block text-slate-900 dark:text-white">Leatile</span>
-                <span className="block bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
-                  Mosimanyana
-                </span>
+            {/* Main heading */}
+            <div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white leading-tight mb-4">
+                Leatile
+                <br />
+                <span className="text-slate-900 dark:text-white">Mosimanyana</span>
               </h1>
               
-              <p className="text-2xl md:text-3xl font-semibold text-slate-700 dark:text-slate-300">
-                {t("hero.subtitle")}
+              <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
+                {t("hero.subtitle")} - Product designer and digital creative director working in design field, specializing in user interface design.
               </p>
             </div>
 
-            {/* Value Proposition */}
-            <div className="space-y-4">
-              <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                Delivering robust, scalable software solutions with a focus on security and performance. 
-                Specializing in full-stack development and enterprise-grade applications.
-              </p>
-              
-              {/* Trust indicators */}
-              <div className="grid grid-cols-2 gap-3 pt-4">
-                {trustIndicators.map((item, index) => (
-                  <div key={index} className="flex items-center gap-2">
-                    <item.icon className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                    <span className="text-sm text-slate-600 dark:text-slate-400">{item.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-4">
-              {[
-                { number: "13+", label: "Projects Delivered", accent: "text-blue-600 dark:text-blue-400" },
-                { number: "15+", label: "Technologies", accent: "text-emerald-600 dark:text-emerald-400" },
-                { number: "3+", label: "Years Experience", accent: "text-violet-600 dark:text-violet-400" },
-              ].map((stat, i) => (
-                <div
-                  key={i}
-                  className="text-center p-4 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm"
-                >
-                  <div className={`text-2xl font-bold ${stat.accent}`}>{stat.number}</div>
-                  <div className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-1">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+            {/* CTA Button */}
+            <div className="flex flex-wrap gap-4">
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="group inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group inline-flex items-center px-8 py-6 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-2xl shadow-xl transition-all duration-300 transform hover:scale-105 text-lg"
               >
-                <Mail className="w-4 h-4" />
-                {t("hero.connect")}
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                {t("hero.connect")} Hire Me
               </Button>
-              
-              <Button
-                variant="outline"
-                onClick={() => scrollToSection("projects")}
-                className="group inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-slate-300 dark:border-slate-600 hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 dark:text-slate-300 font-semibold rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-300"
-              >
-                <Code className="w-4 h-4" />
-                View Portfolio
-                <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all" />
-              </Button>
-              
-              <a
-                href="/Leatile_Mosimanyana_CV.pdf"
-                download
-                className="group inline-flex items-center justify-center gap-2 px-8 py-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300"
-              >
-                <Download className="w-4 h-4" />
-                Download CV
-              </a>
             </div>
 
-            {/* Social Proof */}
+            {/* Brand logos */}
             <div className="pt-8">
-              <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                Trusted by teams and individuals worldwide
+              <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-6 uppercase tracking-wider">
+                Work For All This Brand & Client
               </p>
-              <div className="flex items-center gap-6">
-                <a
-                  href="https://github.com/Cse21-034"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group p-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300"
-                  aria-label="GitHub Profile"
-                >
-                  <Github className="w-5 h-5 text-slate-700 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white" />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group p-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300"
-                  aria-label="LinkedIn Profile"
-                >
-                  <Linkedin className="w-5 h-5 text-slate-700 dark:text-slate-400 group-hover:text-blue-600" />
-                </a>
-                <a
-                  href="mailto:leatilemanando@gmail.com"
-                  className="group p-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300"
-                  aria-label="Email"
-                >
-                  <Mail className="w-5 h-5 text-slate-700 dark:text-slate-400 group-hover:text-emerald-600" />
-                </a>
-                <div className="h-4 w-px bg-slate-300 dark:bg-slate-700" />
-                <span className="text-sm text-slate-600 dark:text-slate-400">
-                  📍 {t("hero.location")}
-                </span>
+              <div className="flex flex-wrap items-center gap-8 opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Slack_Technologies_Logo.svg/2560px-Slack_Technologies_Logo.svg.png" alt="Slack" className="h-8 grayscale hover:grayscale-0 transition" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Airbnb_Logo.svg/2560px-Airbnb_Logo.svg.png" alt="Airbnb" className="h-8 grayscale hover:grayscale-0 transition" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Dropbox_Logo.svg/2560px-Dropbox_Logo.svg.png" alt="Dropbox" className="h-8 grayscale hover:grayscale-0 transition" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Upwork-logo.svg/2560px-Upwork-logo.svg.png" alt="Upwork" className="h-8 grayscale hover:grayscale-0 transition" />
               </div>
             </div>
           </div>
 
-          {/* Right Column - Visual Elements */}
-          <div className="relative">
-            {/* Tech Skills Orbit */}
-            <div
-              className="relative mx-auto w-96 h-96"
+          {/* Right column - Image with floating cards */}
+          <div className="relative flex justify-center lg:justify-end">
+            <div 
+              className="relative"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              {/* Central Profile */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-2xl">
-                    <img 
-                      src="https://iili.io/FndI3IS.png" 
-                      alt="Leatile Mosimanyana" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center shadow-xl border-4 border-white dark:border-slate-800">
-                    <Award className="w-5 h-5 text-white" />
-                  </div>
+              {/* Main image container */}
+              <div className="relative w-80 h-96 lg:w-96 lg:h-[500px]">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 to-purple-100/30 dark:from-slate-700/30 dark:to-slate-600/30 rounded-3xl transform rotate-3" />
+                <img 
+                  src="https://iili.io/FndI3IS.png" 
+                  alt="Leatile Mosimanyana" 
+                  className="relative w-full h-full object-cover rounded-3xl shadow-2xl"
+                />
+              </div>
+
+              {/* Floating badge - Best Design Awards (top right) */}
+              <div 
+                className={`absolute -top-6 -right-6 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-4 flex items-center gap-3 border border-orange-100 dark:border-slate-700 transition-all duration-700 ${
+                  isHovered ? 'translate-y-2 rotate-3' : ''
+                }`}
+                style={{ animationDelay: "0.1s" }}
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                  <Award className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-slate-900 dark:text-white">Best Design</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">Awards</div>
                 </div>
               </div>
 
-              {/* Orbiting Tech Skills */}
-              {techIcons.map(({ Icon, label, color, position, delay }, index) => (
-                <div
-                  key={index}
-                  className={`absolute ${position} transition-all duration-700 ease-out ${
-                    isHovered ? "opacity-100 scale-100" : "opacity-0 scale-0"
-                  }`}
-                  style={{ transitionDelay: isHovered ? delay : "0s" }}
-                >
-                  <div className="group relative">
-                    <div
-                      className={`w-14 h-14 ${color} rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:scale-110 group-hover:-translate-y-1`}
-                    >
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="px-3 py-1.5 bg-slate-900 text-white text-xs font-medium rounded-lg shadow-lg">
-                        {label}
-                        <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-900 rotate-45" />
-                      </div>
-                    </div>
-                  </div>
+              {/* Floating badge - UI/UX (left middle) */}
+              <div 
+                className={`absolute top-1/2 -left-8 transform -translate-y-1/2 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-4 flex items-center gap-3 border border-emerald-100 dark:border-slate-700 transition-all duration-700 ${
+                  isHovered ? 'translate-x-2 -rotate-3' : ''
+                }`}
+                style={{ animationDelay: "0.2s" }}
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center text-2xl">
+                  😋
                 </div>
-              ))}
+                <div>
+                  <div className="text-sm font-bold text-slate-900 dark:text-white">UI/Ux</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">Lorem ipsum dummy</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">text are visually</div>
+                </div>
+              </div>
 
-              {/* Concentric circles */}
-              <div className={`absolute inset-0 border border-slate-200/20 dark:border-slate-700/20 rounded-full transition-all duration-1000 ${isHovered ? "scale-125" : "scale-100"}`} />
-              <div className={`absolute inset-0 border border-slate-200/10 dark:border-slate-700/10 rounded-full transition-all duration-1000 ${isHovered ? "scale-150" : "scale-100"}`} />
-            </div>
-
-            {/* Expertise Summary */}
-            <div className="mt-12 p-6 bg-gradient-to-br from-white to-slate-50 dark:from-slate-800/50 dark:to-slate-900/50 rounded-2xl border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm shadow-lg">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Core Expertise</h3>
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  "Full Stack Development",
-                  "API Architecture",
-                  "Cloud Infrastructure",
-                  "Security Auditing",
-                  "Database Design",
-                  "CI/CD Pipeline"
-                ].map((skill, index) => (
-                  <div key={index} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                    <span className="text-sm text-slate-600 dark:text-slate-400">{skill}</span>
+              {/* Floating badge - Shopify (bottom right) */}
+              <div 
+                className={`absolute -bottom-6 -right-6 bg-white dark:bg-slate-800 rounded-full w-32 h-32 shadow-2xl flex items-center justify-center border-4 border-purple-100 dark:border-slate-700 transition-all duration-700 ${
+                  isHovered ? '-translate-y-2 rotate-6' : ''
+                }`}
+                style={{ animationDelay: "0.3s" }}
+              >
+                <div className="text-center">
+                  <div className="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl mx-auto mb-2 flex items-center justify-center">
+                    <Database className="w-7 h-7 text-white" />
                   </div>
-                ))}
+                  <div className="text-xs font-bold text-slate-900 dark:text-white">shopify</div>
+                </div>
+              </div>
+
+              {/* Tech stack icons (orbiting) */}
+              <div className={`absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-xl transition-all duration-700 ${
+                isHovered ? 'scale-110 rotate-12' : 'opacity-90'
+              }`}>
+                <Code className="w-6 h-6 text-white" />
+              </div>
+              
+              <div className={`absolute bottom-20 left-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl transition-all duration-700 ${
+                isHovered ? 'scale-110 -rotate-12' : 'opacity-90'
+              }`}>
+                <Shield className="w-6 h-6 text-white" />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-              Explore More
-            </span>
-            <div className="w-6 h-10 border-2 border-slate-300 dark:border-slate-600 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-slate-400 dark:bg-slate-500 rounded-full mt-2 animate-bounce" />
+        {/* Bottom section - Stats and Social Links */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-6">
+            {[
+              { number: "13+", label: t("hero.projects"), gradient: "from-blue-600 to-cyan-500" },
+              { number: "15+", label: t("hero.technologies"), gradient: "from-emerald-500 to-green-500" },
+              { number: "3+", label: t("hero.experience"), gradient: "from-purple-600 to-pink-500" },
+            ].map((stat, i) => (
+              <div
+                key={i}
+                className="bg-white/70 dark:bg-slate-800/70 rounded-2xl p-6 shadow-xl border border-white/20 dark:border-slate-700/50 hover:scale-105 transition-all duration-300"
+              >
+                <div className={`text-3xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
+                  {stat.number}
+                </div>
+                <div className="text-sm font-medium text-slate-600 dark:text-slate-400">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Social links and additional CTAs */}
+          <div className="flex flex-col gap-6">
+            <div className="flex gap-4">
+              <Button
+                variant="outline"
+                onClick={() => scrollToSection("projects")}
+                className="group inline-flex items-center px-6 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 rounded-xl"
+              >
+                <Code className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+                {t("hero.portfolio")}
+              </Button>
+              <a
+                href="/Leatile_Mosimanyana_CV.pdf"
+                download
+                className="group inline-flex items-center px-6 py-3 border rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600"
+              >
+                <Download className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+                {t("hero.resume")}
+              </a>
             </div>
+
+            {/* Social icons */}
+            <div className="flex gap-4">
+              <a
+                href="https://github.com/Cse21-034"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+              >
+                <Github className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-slate-200" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+              >
+                <Linkedin className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-blue-600" />
+              </a>
+              <a
+                href="mailto:leatilemanando@gmail.com"
+                className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+              >
+                <Mail className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-green-600" />
+              </a>
+              <a
+                href="https://portfolio-git-main-leatiles-projects.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group w-12 h-12 bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+              >
+                <ExternalLink className="h-6 w-6 text-slate-600 dark:text-slate-400 group-hover:text-purple-600" />
+              </a>
+            </div>
+
+            <p className="text-sm text-slate-500 dark:text-slate-500">
+              📍 {t("hero.location")}
+            </p>
           </div>
         </div>
       </div>
+
+      {/* Subtle grid overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)] pointer-events-none" />
     </section>
   );
 }
