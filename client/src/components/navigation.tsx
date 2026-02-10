@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -13,12 +14,11 @@ import { LanguageSwitcher } from "./language-switcher";
 import { useLanguage } from "./language-context";
 
 const navItems = [
-  { href: "#home", labelKey: "nav.home" },
-  { href: "#projects", labelKey: "nav.projects" },
-  { href: "#awards", labelKey: "Awards" },
-  { href: "#about", labelKey: "nav.about" },
-  { href: "#services", labelKey: "nav.services" },
-  { href: "#contact", labelKey: "nav.contact" },
+  { href: "/", labelKey: "nav.home" },
+  { href: "/services", labelKey: "nav.services" },
+  { href: "/portfolio", labelKey: "nav.projects" },
+  { href: "/about", labelKey: "nav.about" },
+  { href: "/contact", labelKey: "nav.contact" },
 ];
 
 const moreItems = [
@@ -30,7 +30,7 @@ const moreItems = [
 ];
 
 export function Navigation() {
-  const [activeSection, setActiveSection] = useState("home");
+  const [location, setLocation] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
@@ -39,26 +39,16 @@ export function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
-      
-      // Update active section based on scroll position
-      const allSections = [...navItems, ...moreItems].map(item => item.href.slice(1));
-      const currentSection = allSections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 150 && rect.bottom >= 150;
-        }
-        return false;
-      });
-      
-      if (currentSection) {
-        setActiveSection(currentSection);
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navigateTo = (href: string) => {
+    setLocation(href);
+    setIsMobileOpen(false);
+  };
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -68,7 +58,7 @@ export function Navigation() {
     }
   };
 
-  const isMoreActive = moreItems.some(item => item.href.slice(1) === activeSection);
+  const isMoreActive = moreItems.some(item => item.href === location);
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -80,11 +70,11 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16 gap-4">
           {/* Logo */}
           <button
-            onClick={() => scrollToSection("#home")}
+            onClick={() => navigateTo("/")}
             className="flex-shrink-0 group hover:opacity-80 transition-opacity duration-200"
           >
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center font-bold text-white shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+              <div className="w-9 h-9 bg-gradient-to-br from-amber-500 to-amber-600 rounded-lg flex items-center justify-center font-bold text-white shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                 LM
               </div>
               <span className="hidden sm:block text-base font-semibold text-gray-900 dark:text-white tracking-tight">
@@ -98,16 +88,16 @@ export function Navigation() {
             {navItems.map((item) => (
               <button
                 key={item.href}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => navigateTo(item.href)}
                 className={`relative px-3.5 py-2 text-sm font-medium transition-all duration-200 rounded-md ${
-                  activeSection === item.href.slice(1)
-                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30"
+                  location === item.href
+                    ? "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30"
                     : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/30"
                 }`}
               >
                 {t(item.labelKey)}
-                {activeSection === item.href.slice(1) && (
-                  <span className="absolute bottom-1 left-3 right-3 h-1 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full" />
+                {location === item.href && (
+                  <span className="absolute bottom-1 left-3 right-3 h-1 bg-gradient-to-r from-amber-500 to-amber-400 rounded-full" />
                 )}
               </button>
             ))}
@@ -118,14 +108,14 @@ export function Navigation() {
                 <button
                   className={`relative px-3.5 py-2 text-sm font-medium transition-all duration-200 rounded-md flex items-center gap-1.5 ${
                     isMoreActive
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30"
+                      ? "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/30"
                   }`}
                 >
                   More
                   <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200" />
                   {isMoreActive && (
-                    <span className="absolute bottom-1 left-3 right-3 h-1 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full" />
+                    <span className="absolute bottom-1 left-3 right-3 h-1 bg-gradient-to-r from-amber-500 to-amber-400 rounded-full" />
                   )}
                 </button>
               </DropdownMenuTrigger>
@@ -135,8 +125,8 @@ export function Navigation() {
                     key={item.href}
                     onClick={() => scrollToSection(item.href)}
                     className={`cursor-pointer text-sm py-2.5 px-3 transition-colors duration-150 ${
-                      activeSection === item.href.slice(1)
-                        ? "bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400"
+                      location === item.href
+                        ? "bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400"
                         : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
                     }`}
                   >
@@ -187,7 +177,7 @@ export function Navigation() {
                   {/* Mobile Header */}
                   <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-100 dark:border-gray-800">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center font-bold text-white shadow-md">
+                      <div className="w-9 h-9 bg-gradient-to-br from-amber-500 to-amber-600 rounded-lg flex items-center justify-center font-bold text-white shadow-md">
                         LM
                       </div>
                       <span className="text-base font-semibold text-gray-900 dark:text-white tracking-tight">
@@ -201,10 +191,10 @@ export function Navigation() {
                     {navItems.map((item) => (
                       <button
                         key={item.href}
-                        onClick={() => scrollToSection(item.href)}
+                        onClick={() => navigateTo(item.href)}
                         className={`w-full text-left px-4 py-3 rounded-md transition-all duration-200 ${
-                          activeSection === item.href.slice(1)
-                            ? "bg-blue-50 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 font-medium"
+                          location === item.href
+                            ? "bg-amber-50 dark:bg-amber-950/30 text-amber-600 dark:text-amber-400 font-medium"
                             : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
                         }`}
                       >
@@ -220,8 +210,8 @@ export function Navigation() {
                           key={item.href}
                           onClick={() => scrollToSection(item.href)}
                           className={`w-full text-left px-4 py-3 rounded-md transition-all duration-200 flex items-center gap-2.5 ${
-                            activeSection === item.href.slice(1)
-                              ? "bg-blue-50 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 font-medium"
+                            location === item.href
+                              ? "bg-amber-50 dark:bg-amber-950/30 text-amber-600 dark:text-amber-400 font-medium"
                               : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
                           }`}
                         >
