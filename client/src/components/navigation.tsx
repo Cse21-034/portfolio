@@ -60,8 +60,6 @@ export function Navigation() {
     }
   };
 
-  const isMoreActive = moreItems.some(item => item.href.slice(1) === activeSection);
-
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
