@@ -367,56 +367,119 @@ export function Projects() {
           </div>
         </div>
 
-        {/* Organization Filter Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-12">
-          {organizations.map((org) => {
-            const count = getOrgCountForId(org.id);
-            const isActive = activeOrg === org.id;
-            return (
-              <button
-                key={org.id}
-                onClick={() => { setActiveOrg(org.id); setShowMore(false); }}
-                className={`group relative p-4 rounded-2xl border-2 text-left transition-all duration-300 ${
-                  isActive
-                    ? "border-transparent shadow-xl scale-105"
-                    : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:scale-102 hover:shadow-lg"
-                }`}
-                style={isActive ? {
-                  background: `linear-gradient(135deg, var(--tw-gradient-stops))`,
-                } : {}}
-              >
-                {isActive && (
-                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${org.color} opacity-100`} />
-                )}
-                <div className="relative z-10">
-                  <div className={`flex items-center gap-2 mb-2 ${isActive ? "text-white" : "text-gray-700 dark:text-gray-300"}`}>
-                    {org.icon}
-                    <span className="text-2xl font-bold">{count}</span>
-                  </div>
-                  <p className={`font-semibold text-xs leading-tight ${isActive ? "text-white" : "text-gray-800 dark:text-gray-200"}`}>
-                    {org.label}
-                  </p>
-                  <p className={`text-xs mt-1 ${isActive ? "text-white/80" : "text-gray-500 dark:text-gray-400"}`}>
-                    {org.description}
-                  </p>
-                </div>
-              </button>
-            );
-          })}
-        </div>
+        {/* Organization Filter — compact pill row with real logos */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
 
-        {/* Active org banner */}
-        {activeOrg !== "all" && (
-          <div className="mb-8 p-4 rounded-2xl bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 border border-gray-200 dark:border-gray-600 flex items-center gap-3">
-            <div className={`w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${organizations.find(o => o.id === activeOrg)?.color}`}>
-              <span className="text-white">{organizations.find(o => o.id === activeOrg)?.icon}</span>
-            </div>
-            <div>
-              <p className="font-bold text-gray-900 dark:text-white text-sm">{organizations.find(o => o.id === activeOrg)?.label}</p>
-              <p className="text-gray-500 dark:text-gray-400 text-xs">{organizations.find(o => o.id === activeOrg)?.description} · {getOrgCountForId(activeOrg)} project{getOrgCountForId(activeOrg) !== 1 ? "s" : ""}</p>
-            </div>
-          </div>
-        )}
+          {/* All */}
+          <button
+            onClick={() => { setActiveOrg("all"); setShowMore(false); }}
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-sm font-medium transition-all duration-200 ${
+              activeOrg === "all"
+                ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white border-transparent shadow-md"
+                : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-blue-300 hover:shadow-sm"
+            }`}
+          >
+            <span className={`text-xs font-bold px-1.5 py-0.5 rounded-md ${activeOrg === "all" ? "bg-white/25 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-500"}`}>
+              {getOrgCountForId("all")}
+            </span>
+            All Projects
+          </button>
+
+          {/* Orange Digital Center — uses Orange telecom SVG logo */}
+          <button
+            onClick={() => { setActiveOrg("orange"); setShowMore(false); }}
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-sm font-medium transition-all duration-200 ${
+              activeOrg === "orange"
+                ? "bg-orange-50 dark:bg-orange-900/30 border-orange-400 shadow-md ring-1 ring-orange-300"
+                : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-orange-300 hover:shadow-sm"
+            }`}
+          >
+            {/* Orange square logo */}
+            <span className="inline-flex items-center justify-center rounded-md bg-[#ff6600] shrink-0" style={{ width: 20, height: 20 }}>
+              <svg viewBox="0 0 100 100" width="12" height="12" fill="white">
+                <rect width="100" height="100" rx="18" fill="#ff6600"/>
+                <text x="50" y="72" textAnchor="middle" fontSize="62" fontWeight="900" fill="white" fontFamily="Arial,sans-serif">O</text>
+              </svg>
+            </span>
+            <span className={activeOrg === "orange" ? "text-orange-700 dark:text-orange-300 font-semibold" : ""}>
+              Orange Digital Center
+            </span>
+            <span className={`text-xs font-bold px-1.5 py-0.5 rounded-md ${activeOrg === "orange" ? "bg-orange-100 text-orange-700 dark:bg-orange-900/50 dark:text-orange-300" : "bg-gray-100 dark:bg-gray-700 text-gray-500"}`}>
+              {getOrgCountForId("orange")}
+            </span>
+          </button>
+
+          {/* SolidCare — monogram logo (no public logo available) */}
+          <button
+            onClick={() => { setActiveOrg("solidcare"); setShowMore(false); }}
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-sm font-medium transition-all duration-200 ${
+              activeOrg === "solidcare"
+                ? "bg-emerald-50 dark:bg-emerald-900/30 border-emerald-400 shadow-md ring-1 ring-emerald-300"
+                : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-emerald-300 hover:shadow-sm"
+            }`}
+          >
+            <span className="inline-flex items-center justify-center rounded-md bg-emerald-500 text-white font-black shrink-0" style={{ width: 20, height: 20, fontSize: 9 }}>
+              SC
+            </span>
+            <span className={activeOrg === "solidcare" ? "text-emerald-700 dark:text-emerald-300 font-semibold" : ""}>
+              SolidCare Services
+            </span>
+            <span className={`text-xs font-bold px-1.5 py-0.5 rounded-md ${activeOrg === "solidcare" ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300" : "bg-gray-100 dark:bg-gray-700 text-gray-500"}`}>
+              {getOrgCountForId("solidcare")}
+            </span>
+          </button>
+
+          {/* LoadX Africa — wordmark pill */}
+          <button
+            onClick={() => { setActiveOrg("loadxafrica"); setShowMore(false); }}
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-sm font-medium transition-all duration-200 ${
+              activeOrg === "loadxafrica"
+                ? "bg-blue-50 dark:bg-blue-900/30 border-blue-400 shadow-md ring-1 ring-blue-300"
+                : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-blue-300 hover:shadow-sm"
+            }`}
+          >
+            {/* LX monogram */}
+            <span className="inline-flex items-center justify-center rounded-md bg-blue-600 text-white font-black shrink-0" style={{ width: 20, height: 20, fontSize: 8, letterSpacing: "-0.5px" }}>
+              LX
+            </span>
+            <span className={activeOrg === "loadxafrica" ? "text-blue-700 dark:text-blue-300 font-semibold" : ""}>
+              LoadX Africa
+            </span>
+            <span className={`text-xs font-bold px-1.5 py-0.5 rounded-md ${activeOrg === "loadxafrica" ? "bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300" : "bg-gray-100 dark:bg-gray-700 text-gray-500"}`}>
+              {getOrgCountForId("loadxafrica")}
+            </span>
+          </button>
+
+          {/* Freelancer — real Freelancer.com logo */}
+          <button
+            onClick={() => { setActiveOrg("freelancer"); setShowMore(false); }}
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-sm font-medium transition-all duration-200 ${
+              activeOrg === "freelancer"
+                ? "bg-purple-50 dark:bg-purple-900/30 border-purple-400 shadow-md ring-1 ring-purple-300"
+                : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-purple-300 hover:shadow-sm"
+            }`}
+          >
+            {/* Freelancer.com logo mark — the "f>" arrow mark */}
+            <span className="inline-flex items-center justify-center rounded-md bg-[#29B2FE] shrink-0 overflow-hidden" style={{ width: 20, height: 20 }}>
+              <img
+                src="https://www.freelancer.com/favicon.ico"
+                alt="Freelancer"
+                style={{ width: 14, height: 14, objectFit: "contain" }}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = "none";
+                  (e.target as HTMLImageElement).parentElement!.innerHTML = '<span style="color:white;font-weight:900;font-size:10px">f</span>';
+                }}
+              />
+            </span>
+            <span className={activeOrg === "freelancer" ? "text-purple-700 dark:text-purple-300 font-semibold" : ""}>
+              Freelancer
+            </span>
+            <span className={`text-xs font-bold px-1.5 py-0.5 rounded-md ${activeOrg === "freelancer" ? "bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300" : "bg-gray-100 dark:bg-gray-700 text-gray-500"}`}>
+              {getOrgCountForId("freelancer")}
+            </span>
+          </button>
+
+        </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -431,7 +494,7 @@ export function Projects() {
               >
                 {project.organization === "orange" && (
                   <div className="bg-gradient-to-r from-orange-500 to-amber-500 text-white text-xs font-semibold px-4 py-2 text-center flex items-center justify-center gap-2">
-                    <Microscope className="w-3 h-3" />
+                    <span className="inline-flex items-center justify-center rounded bg-white/25 px-1.5 py-0.5 text-white font-black text-xs tracking-tight">ODC</span>
                     AI RESEARCH PROJECT · ORANGE DIGITAL CENTER 2025
                   </div>
                 )}
