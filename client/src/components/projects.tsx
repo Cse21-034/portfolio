@@ -102,8 +102,8 @@ const projects: Project[] = [
   // ──────────────────────────────────────────
   {
     id: 2,
-    title: "SolidCare Corporate Web Platform",
-    description: "Full-featured corporate web application built for SolidCare Services Pty Ltd. Includes service portfolio management, client portal, booking system, admin dashboard, and CMS for managing company services and team information.",
+    title: "Namibia services directory",
+    description: "Discover the best businesses across Namibia - from restaurants and shops to professional services and tourism operators.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     category: "web",
     organization: "solidcare",
@@ -113,8 +113,8 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "SolidCare Client Management System",
-    description: "Internal CRM and client management web application for SolidCare Services. Features client onboarding workflows, service tracking, invoicing, automated notifications, and comprehensive reporting dashboard for management.",
+    title: "Solid triangle botswana",
+    description: "Comprehensive ICT solutions including network infrastructure, cybersecurity, smart metering, and telecommunications for businesses across Botswana and beyond.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     category: "web",
     organization: "solidcare",
@@ -124,8 +124,8 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "SolidCare Staff Operations Portal",
-    description: "Internal operations portal for SolidCare Services staff. Includes scheduling, task management, attendance tracking, performance monitoring, and HR management tools with role-based access control.",
+    title: "Kraalpond holdings",
+    description: "Sustainable design Integrated management Premium property solutions for the modern era.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
     category: "web",
     organization: "solidcare",
