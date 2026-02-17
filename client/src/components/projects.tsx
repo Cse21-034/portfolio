@@ -94,6 +94,7 @@ const projects: Project[] = [
     organization: "orange",
     technologies: ["Python", "TensorFlow", "OpenCV", "Computer Vision", "Deep Learning", "Image Processing"],
     githubUrl: "https://github.com/Cse21-034",
+    liveUrl: "https://malaria-detection-demo.vercel.app",
     year: "2025"
   },
 
@@ -109,6 +110,7 @@ const projects: Project[] = [
     organization: "solidcare",
     technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Express", "TailwindCSS"],
     githubUrl: "https://github.com/Cse21-034",
+    liveUrl: "https://namibia-directory.vercel.app",
     year: "2024"
   },
   {
@@ -120,6 +122,7 @@ const projects: Project[] = [
     organization: "solidcare",
     technologies: ["React", "Node.js", "PostgreSQL", "Drizzle ORM", "WebSocket", "Express"],
     githubUrl: "https://github.com/Cse21-034",
+    liveUrl: "https://solidtriangle-bw.vercel.app",
     year: "2024"
   },
   {
@@ -131,6 +134,7 @@ const projects: Project[] = [
     organization: "solidcare",
     technologies: ["React", "TypeScript", "PostgreSQL", "Express", "Passport.js", "TailwindCSS"],
     githubUrl: "https://github.com/Cse21-034",
+    liveUrl: "https://kraalpond-holdings.vercel.app",
     year: "2024"
   },
 
@@ -235,6 +239,7 @@ const projects: Project[] = [
     organization: "freelancer",
     technologies: ["Java", "xml", "Firebase", "SQLite", "Push Notifications"],
     githubUrl: "https://github.com/Cse21-034/task-management",
+    liveUrl: "https://recipe-app-demo.vercel.app",
     downloadUrl: "https://play.google.com",
     year: "2023"
   },

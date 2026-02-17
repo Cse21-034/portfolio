@@ -144,9 +144,9 @@ export function Hero() {
               {/* Main image container */}
               <div className="relative w-80 h-96 lg:w-96 lg:h-[500px]">
                 <img 
-                  src="https://iili.io/FndI3IS.png" 
+                  src="https://iili.io/qd4QflS.jpg" 
                   alt="Leatile Mosimanyana" 
-                  className="relative w-full h-full object-cover rounded-3xl shadow-2xl"
+                  className="relative w-full h-full object-contain rounded-3xl shadow-2xl"
                 />
               </div>
 

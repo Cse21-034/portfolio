@@ -23,7 +23,7 @@ export function About() {
           <div className="order-2 lg:order-1">
             <div className="relative">
               <img
-                src="https://iili.io/KwHPVFn.png"
+                src="https://iili.io/qd46mjR.jpg"
                 alt="Professional developer workspace"
                 className="rounded-xl shadow-2xl w-full h-auto transition-transform duration-300 hover:scale-105"
               />
