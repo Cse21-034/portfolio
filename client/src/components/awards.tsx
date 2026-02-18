@@ -97,7 +97,7 @@ export function Awards() {
                       <img
                         src={ad.image}
                         alt={ad.heading}
-                        className="image-rotate absolute w-full h-full object-contain transition-transform duration-500"
+                        className="image-rotate absolute w-full h-full object-cover transition-transform duration-500"
                       />
                       {/* Dark overlay gradient */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
