@@ -75,15 +75,15 @@ export function Awards() {
                     32%, 66% { opacity: 0; }
                   }
                   .ad-slide {
-                    animation: rotateAds 9s infinite;
+                    animation: rotateAds 18s infinite;
                   }
                   .ad-slide:nth-child(2) {
-                    animation: rotateAds 9s infinite;
-                    animation-delay: 3s;
+                    animation: rotateAds 18s infinite;
+                    animation-delay: 6s;
                   }
                   .ad-slide:nth-child(3) {
-                    animation: rotateAds 9s infinite;
-                    animation-delay: 6s;
+                    animation: rotateAds 18s infinite;
+                    animation-delay: 12s;
                   }
                 `}</style>
                 
