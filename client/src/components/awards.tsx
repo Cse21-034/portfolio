@@ -25,7 +25,7 @@ export function Awards() {
       description: "Awarded 3rd position in the Orange Summer Challenge 2025 Startup4Good competition for innovative startup ideas.",
       icon: Trophy,
       color: "text-orange-500 bg-orange-100 dark:bg-orange-900/20",
-      image: "https://images.unsplash.com/photo-1553531088-df340cf313d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300",
+      image: "https://iili.io/qd4QflS.jpg",
     },
   ];
 
@@ -40,11 +40,11 @@ export function Awards() {
           
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex justify-center">
           {recognitions.map((item) => {
             const Icon = item.icon;
             return (
-              <Card key={item.id} className="group border-0 bg-gray-50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+              <Card key={item.id} className="group border-0 bg-gray-50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden w-full max-w-md">
                 <div className="relative w-full h-40 overflow-hidden bg-gray-200 dark:bg-gray-700">
                   <img 
                     src={item.image} 
