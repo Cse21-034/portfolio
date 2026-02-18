@@ -14,6 +14,7 @@ interface Recognition {
     image: string;
     heading: string;
     subheading: string;
+    showText: boolean;
   }>;
 }
 
@@ -32,18 +33,21 @@ export function Awards() {
       ads: [
         {
           image: "https://iili.io/qd4QflS.jpg",
-          heading: "Orange Summer Challenge 2025",
-          subheading: "3rd Position Winner - Startup4Good",
+          heading: "3rd Position Winner",
+          subheading: "Orange Summer Challenge 2025",
+          showText: true,
         },
         {
-          image: "https://images.unsplash.com/photo-1553531088-df340cf313d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&h=600",
-          heading: "Innovative Solutions",
-          subheading: "Building Tomorrow's Success Today",
+          image: "/award-slide-1.jpg",
+          heading: "",
+          subheading: "",
+          showText: false,
         },
         {
-          image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&h=600",
-          heading: "Digital Excellence",
-          subheading: "Recognized by Orange Digital Center",
+          image: "/award-slide-2.jpg",
+          heading: "",
+          subheading: "",
+          showText: false,
         },
       ],
     },
@@ -93,18 +97,18 @@ export function Awards() {
                       <img
                         src={ad.image}
                         alt={ad.heading}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="image-rotate absolute w-full h-full object-contain transition-transform duration-500"
                       />
                       {/* Dark overlay gradient */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
                     </div>
                   ))}
 
-                  {/* Content overlay - positioned absolutely */}
-                  <div className="ad-slide absolute inset-0 flex flex-col justify-between p-8 md:p-12 text-white">
-                    {item.ads.map((ad, idx) => (
-                      <div key={idx} className="ad-slide absolute inset-0 flex flex-col justify-end p-8 md:p-12">
-                        <div className="space-y-4">
+                  {/* Content overlay - text only on first image */}
+                  {item.ads.map((ad, idx) => (
+                    <div key={idx} className="ad-slide absolute inset-0 flex flex-col justify-end p-8 md:p-12">
+                      {ad.showText && (
+                        <div className="space-y-4 text-white">
                           <div className="flex items-center gap-4">
                             <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${item.color} backdrop-blur-md shadow-lg`}>
                               <Icon className="w-7 h-7" />
@@ -128,9 +132,9 @@ export function Awards() {
                             {item.description}
                           </p>
                         </div>
-                      </div>
-                    ))}
-                  </div>
+                      )}
+                    </div>
+                  ))}
 
                   {/* Pagination indicators */}
                   <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
