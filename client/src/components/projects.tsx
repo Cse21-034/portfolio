@@ -94,7 +94,7 @@ const projects: Project[] = [
     organization: "orange",
     technologies: ["Python", "TensorFlow", "OpenCV", "Computer Vision", "Deep Learning", "Image Processing"],
     githubUrl: "https://github.com/Cse21-034",
-    liveUrl: "https://malaria-detection-demo.vercel.app",
+    liveUrl: "#",
     year: "2025"
   },
 
@@ -110,7 +110,7 @@ const projects: Project[] = [
     organization: "solidcare",
     technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Express", "TailwindCSS"],
     githubUrl: "https://github.com/Cse21-034",
-    liveUrl: "https://namibia-directory.vercel.app",
+    liveUrl: "https://namibiaservices .com",
     year: "2024"
   },
   {
@@ -122,7 +122,7 @@ const projects: Project[] = [
     organization: "solidcare",
     technologies: ["React", "Node.js", "PostgreSQL", "Drizzle ORM", "WebSocket", "Express"],
     githubUrl: "https://github.com/Cse21-034",
-    liveUrl: "https://solidtriangle-bw.vercel.app",
+    liveUrl: "https://solidtrianglebotswana.com",
     year: "2024"
   },
   {
@@ -134,7 +134,7 @@ const projects: Project[] = [
     organization: "solidcare",
     technologies: ["React", "TypeScript", "PostgreSQL", "Express", "Passport.js", "TailwindCSS"],
     githubUrl: "https://github.com/Cse21-034",
-    liveUrl: "https://kraalpond-holdings.vercel.app",
+    liveUrl: "https://kraalpond.com",
     year: "2024"
   },
 
@@ -150,14 +150,14 @@ const projects: Project[] = [
     organization: "loadxafrica",
     technologies: ["React", "Express", "PostgreSQL", "Image Management", "TypeScript"],
     githubUrl: "https://github.com/Cse21-034/agri-services",
-    liveUrl: "https://afri4-7fb5.vercel.app/",
+    liveUrl: "https://loadxafrica.com",
     year: "2024"
   },
 
   // ──────────────────────────────────────────
   // FREELANCER
   // ──────────────────────────────────────────
-  {
+  {/*
     id: 6,
     title: "Compound Betting Plan Manager",
     description: "Professional betting plan management app with compound progression tracking, real-time analytics, mobile-responsive design, and comprehensive dashboard for monitoring betting strategies.",
@@ -168,9 +168,9 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Cse21-034/betting-plan-manager",
     liveUrl: "https://money-marathon.vercel.app",
     year: "2024"
-  },
+ */ },
   {
-    id: 7,
+    id: 6,
     title: "E-Commerce Platform",
     description: "Full-stack shop with authentication, shopping cart, secure checkout, admin dashboard, and separated frontend/backend architecture for scalable deployment.",
     image: "https://iili.io/Fn3xRN2.png",
@@ -182,7 +182,7 @@ const projects: Project[] = [
     year: "2024"
   },
   {
-    id: 8,
+    id: 7,
     title: "Portfolio Website",
     description: "Responsive portfolio site with dark mode toggle, smooth animations, contact form, project showcase, and modern design principles.",
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
@@ -190,11 +190,11 @@ const projects: Project[] = [
     organization: "freelancer",
     technologies: ["React", "TailwindCSS", "Node.js", "Express", "PostgreSQL", "Framer Motion"],
     githubUrl: "https://github.com/Cse21-034/portfolio",
-    liveUrl: "https://portfolio-git-main-leatiles-projects.vercel.app/",
+    liveUrl: "https://lmosimanyana.co.bw",
     year: "2024"
   },
   {
-    id: 9,
+    id: 8,
     title: "Agri Services Website",
     description: "Agricultural services platform featuring farm products, borehole services, image gallery, contact management, and content management system.",
     image: "https://iili.io/FxTYdTF.png",
@@ -205,7 +205,7 @@ const projects: Project[] = [
     liveUrl: "https://agri-three-nu.vercel.app",
     year: "2024"
   },
-  {
+  {/*
     id: 10,
     title: "AI-Solution Website",
     description: "Business website showcasing AI tools, services portfolio, client testimonials, and comprehensive service management system.",
@@ -216,9 +216,9 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Cse21-034/ai-solutions",
     liveUrl: "https://shoaudio.rf.gd/?i=1",
     year: "2023"
-  },
+ */ },
   {
-    id: 11,
+    id: 9,
     title: "Queue Management System",
     description: "Intelligent queue management with computer vision, face recognition, real-time WebSocket updates, and automated staff notifications. Full-stack solution with PostgreSQL backend.",
     image: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEBUSEhMRFRUVFRMWGRUWGBcZFhYWHRoYFhUXFhcYHSggGBolGxYWIjEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGhAQGislICUuNS0tKy8wMi0tLS0tLS0tLS0tMC8vLS0tLS0tLS0tLS0tLS0tLS0tLS0rLS0tLS0tK//AABEIALEBHAMBEQACEQEDEQH/xAAcAAEAAAcBAAAAAAAAAAAAAAAAAgMEBQYHCAH/xABREAABAwICAgcTCgMIAgMAAAABAAIDBBESIQUxBgcTQVGRkhQVFyI1UlNUYXFydIGTobGy0dIIFiMyMzRCYnOzlMHTGCQlgoOiwuFDZGPD8P/EABoBAQADAQEBAAAAAAAAAAAAAAABAgUEAwb/xAA4EQACAQICBwUGBgIDAQAAAAAAAQIDEQQSExQhMUFRkVJhcYHwMjOhscHRBSI0YuHxFkIGI6IV/9oADAMBAAIRAxEAPwDeKAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAp5dZQEKAIAgCAIAgCAIAgJ0H1W94ICYgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAp5dZQGPbOfuT/Cj9oLkx3uX5fM5Mb7l+XzNfbG9ikFXFWSvibLMyoayPHNNEzDuULiDub29c43smEinRjderk4SKdGN16uXdu17BY30fGTfL/EKkAjfJ6Y21X8oG9ddOSPI6MkeRdKPayoC28lG5jru6UVdS8WuQ04t0GsWNrZXTJHkMkeRO6F+jO1n/xFT/VTJHkMkeQO1fo3epn/AMRU/wBVMkeQyR5EvoX6OFyad2o6qiq/qpkjyGSPIxvajcS6AnM8zH1NWbQ/VS8zNofqpeZtdahqE6D6re8EBMQBAAEAABQHSAPUBAABGnz+kKBj9IAA4I9ABFOAGrRFLkxTbDJ9I7bwqC8AABA+a5AADK7G0AAXUFtAAZ8oVfhQ8Wq8KaXkAEpgBLQABLVBtoAAUoCVAAAAAADIAARgABQAGnzGkAAvW9pY6pDGKG2AcMTR5MAAFjbJuoAAAAqMK5ADJEBAAEhIAAgAACOJgCAAAAA9JAA4IA4IAAAADo4A+6ApAqgAA6gABOW0AAAAAAAAAUAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//2Q==",
@@ -230,7 +230,7 @@ const projects: Project[] = [
     docsUrl: "https://docs.queue-system.com",
     year: "2024"
   },
-  {
+  {/*
     id: 12,
     title: "Food Recipe App",
     description: "Android mobile app for food recipe management with offline sync, push notifications, recipe categorization, and collaborative features.",
@@ -242,8 +242,8 @@ const projects: Project[] = [
     liveUrl: "https://recipe-app-demo.vercel.app",
     downloadUrl: "https://play.google.com",
     year: "2023"
-  },
-  {
+  */},
+  {/*
     id: 13,
     title: "Authentication Token System",
     description: "JWT-based login system with tamper-proof token validation, session management, and secure user authentication protocols.",
@@ -254,7 +254,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Cse21-034/auth-system",
     liveUrl: "https://wifi2.free.nf/?i=1",
     year: "2023"
-  },
+ */ },
 ];
 
 const orgMeta: Record<string, { badge: string; color: string; bg: string; border: string }> = {
