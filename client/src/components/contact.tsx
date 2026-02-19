@@ -119,7 +119,7 @@ export function Contact() {
                     WhatsApp
                   </h4>
                   <a
-                    href="https://wa.me/26772212372"
+                    href="https://wa.me/26774890824"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
