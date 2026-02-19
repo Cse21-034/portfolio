@@ -124,7 +124,7 @@ export function Contact() {
                     rel="noopener noreferrer"
                     className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
                   >
-                    +267 72 212 372
+                    +267 74890824
                   </a>
                 </div>
               </div>
